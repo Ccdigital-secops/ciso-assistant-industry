@@ -1,0 +1,302 @@
+urn: urn:intuitem:risk:library:iec-62443-4-2
+ref_id: IEC-62443-4-2
+version: 2
+name: IEC 62443-4-2 - Component Security Requirements
+description: "Technical security requirements for IACS components (Industrial Automation and Control Systems)"
+locale: en
+copyright: "IEC - International Electrotechnical Commission"
+provider: IEC
+packager: intuitem
+
+translations:
+  fr:
+    name: IEC 62443-4-2 - Exigences de sécurité des composants
+    description: "Exigences de sécurité techniques pour les composants IACS (Systèmes d'automatisation et de contrôle industriels)"
+
+objects:
+  framework:
+    urn: urn:intuitem:risk:framework:iec-62443-4-2
+    name: IEC 62443-4-2 - Component Security Requirements
+    ref_id: IEC-62443-4-2
+    description: "Technical security requirements for IACS components"
+
+    implementation_groups_definition:
+      - ref_id: SL1
+        name: "Security Level 1"
+        description: "Protection against casual or coincidental violation"
+      - ref_id: SL2
+        name: "Security Level 2"
+        description: "Protection against intentional violation using simple means"
+      - ref_id: SL3
+        name: "Security Level 3"
+        description: "Protection against intentional violation using sophisticated means"
+      - ref_id: SL4
+        name: "Security Level 4"
+        description: "Protection against intentional violation using extended means"
+
+    requirement_nodes:
+      # Foundational Requirement 1: Identification and Authentication Control (IAC)
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-1
+        ref_id: FR-1
+        name: Identification and Authentication Control (IAC)
+        description: "Identify and authenticate all users (humans, software processes, and devices) before allowing them access to the system"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: Contrôle d'identification et d'authentification (IAC)
+            description: "Identifier et authentifier tous les utilisateurs (humains, processus logiciels et dispositifs) avant de leur permettre l'accès au système"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-1.1
+        ref_id: CR 1.1
+        name: Human User Identification and Authentication
+        parent_urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-1
+        assessable: true
+        depth: 2
+        description: "The component shall provide the capability to identify and authenticate all human users on all interfaces"
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: Identification et authentification des utilisateurs humains
+            description: "Le composant doit fournir la capacité d'identifier et d'authentifier tous les utilisateurs humains sur toutes les interfaces"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-1.1-RE1
+        ref_id: CR 1.1 RE(1)
+        name: Unique Identification and Authentication
+        parent_urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-1.1
+        assessable: true
+        depth: 3
+        description: "The component shall provide the capability to uniquely identify and authenticate all human users"
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: Identification et authentification uniques
+            description: "Le composant doit fournir la capacité d'identifier et d'authentifier de manière unique tous les utilisateurs humains"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-1.1-RE2
+        ref_id: CR 1.1 RE(2)
+        name: Multifactor Authentication for Untrusted Networks
+        parent_urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-1.1
+        assessable: true
+        depth: 3
+        description: "The component shall provide the capability to employ multifactor authentication for all human user access from untrusted networks"
+        implementation_groups: [SL3, SL4]
+        translations:
+          fr:
+            name: Authentification multifacteur pour les réseaux non fiables
+            description: "Le composant doit fournir la capacité d'employer une authentification multifacteur pour tous les accès utilisateurs depuis des réseaux non fiables"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-1.2
+        ref_id: CR 1.2
+        name: Software Process and Device Identification and Authentication
+        parent_urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-1
+        assessable: true
+        depth: 2
+        description: "The component shall provide the capability to identify and authenticate all software processes and devices"
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: Identification et authentification des processus logiciels et dispositifs
+            description: "Le composant doit fournir la capacité d'identifier et d'authentifier tous les processus logiciels et dispositifs"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-1.3
+        ref_id: CR 1.3
+        name: Account Management
+        parent_urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-1
+        assessable: true
+        depth: 2
+        description: "The component shall provide the capability to support the management of all accounts"
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: Gestion des comptes
+            description: "Le composant doit fournir la capacité de supporter la gestion de tous les comptes"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-1.4
+        ref_id: CR 1.4
+        name: Identifier Management
+        parent_urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-1
+        assessable: true
+        depth: 2
+        description: "The component shall provide the capability to support the management of identifiers"
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: Gestion des identifiants
+            description: "Le composant doit fournir la capacité de supporter la gestion des identifiants"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-1.5
+        ref_id: CR 1.5
+        name: Authenticator Management
+        parent_urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-1
+        assessable: true
+        depth: 2
+        description: "The component shall provide the capability to support the management of authenticators"
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: Gestion des authentifiants
+            description: "Le composant doit fournir la capacité de supporter la gestion des authentifiants"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-1.7
+        ref_id: CR 1.7
+        name: Strength of Password-based Authentication
+        parent_urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-1
+        assessable: true
+        depth: 2
+        description: "The component shall provide the capability to enforce configurable password strength requirements"
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: Force de l'authentification par mot de passe
+            description: "Le composant doit fournir la capacité d'appliquer des exigences de force de mot de passe configurables"
+
+      # Foundational Requirement 2: Use Control (UC)
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-2
+        ref_id: FR-2
+        name: Use Control (UC)
+        description: "Enforce the assigned privileges of an authenticated user to perform the requested action on the component"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: Contrôle d'utilisation (UC)
+            description: "Appliquer les privilèges assignés d'un utilisateur authentifié pour effectuer l'action demandée sur le composant"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-2.1
+        ref_id: CR 2.1
+        name: Authorization Enforcement
+        parent_urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-2
+        assessable: true
+        depth: 2
+        description: "The component shall provide the capability to enforce authorization checks for all users, software processes, and devices"
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: Application des autorisations
+            description: "Le composant doit fournir la capacité d'appliquer les vérifications d'autorisation pour tous les utilisateurs, processus logiciels et dispositifs"
+
+      # Foundational Requirement 3: System Integrity (SI)
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-3
+        ref_id: FR-3
+        name: System Integrity (SI)
+        description: "Ensure the integrity of the component to prevent unauthorized manipulation"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: Intégrité du système (SI)
+            description: "Assurer l'intégrité du composant pour prévenir les manipulations non autorisées"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-3.1
+        ref_id: CR 3.1
+        name: Communication Integrity
+        parent_urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-3
+        assessable: true
+        depth: 2
+        description: "The component shall provide the capability to protect the integrity of transmitted information"
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: Intégrité des communications
+            description: "Le composant doit fournir la capacité de protéger l'intégrité des informations transmises"
+
+      # Foundational Requirement 4: Data Confidentiality (DC)
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-4
+        ref_id: FR-4
+        name: Data Confidentiality (DC)
+        description: "Ensure the confidentiality of information on communication channels and in data repositories"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: Confidentialité des données (DC)
+            description: "Assurer la confidentialité des informations sur les canaux de communication et dans les dépôts de données"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-4.1
+        ref_id: CR 4.1
+        name: Information Confidentiality
+        parent_urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-4
+        assessable: true
+        depth: 2
+        description: "The component shall provide the capability to protect the confidentiality of information at rest and in transit"
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: Confidentialité des informations
+            description: "Le composant doit fournir la capacité de protéger la confidentialité des informations au repos et en transit"
+
+      # Foundational Requirement 5: Restricted Data Flow (RDF)
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-5
+        ref_id: FR-5
+        name: Restricted Data Flow (RDF)
+        description: "Segment the control system via zones and conduits to limit the unnecessary flow of data"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: Flux de données restreint (RDF)
+            description: "Segmenter le système de contrôle via zones et conduits pour limiter les flux de données inutiles"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-5.1
+        ref_id: CR 5.1
+        name: Network Segmentation
+        parent_urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-5
+        assessable: true
+        depth: 2
+        description: "The component shall provide the capability to logically segment control networks from non-control networks"
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: Segmentation réseau
+            description: "Le composant doit fournir la capacité de segmenter logiquement les réseaux de contrôle des réseaux non-contrôle"
+
+      # Foundational Requirement 6: Timely Response to Events (TRE)
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-6
+        ref_id: FR-6
+        name: Timely Response to Events (TRE)
+        description: "Respond to security violations by notifying the proper authority and taking timely corrective action"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: Réponse rapide aux événements (TRE)
+            description: "Répondre aux violations de sécurité en notifiant l'autorité appropriée et en prenant des mesures correctives rapides"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-6.1
+        ref_id: CR 6.1
+        name: Audit Log Accessibility
+        parent_urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-6
+        assessable: true
+        depth: 2
+        description: "The component shall provide the capability for authorized users to access audit logs on a read-only basis"
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: Accessibilité des journaux d'audit
+            description: "Le composant doit fournir la capacité pour les utilisateurs autorisés d'accéder aux journaux d'audit en lecture seule"
+
+      # Foundational Requirement 7: Resource Availability (RA)
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-7
+        ref_id: FR-7
+        name: Resource Availability (RA)
+        description: "Ensure the availability of the control system against the degradation or denial of essential services"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: Disponibilité des ressources (RA)
+            description: "Assurer la disponibilité du système de contrôle contre la dégradation ou le déni de services essentiels"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443-4-2:cr-7.1
+        ref_id: CR 7.1
+        name: Denial of Service Protection
+        parent_urn: urn:intuitem:risk:req_node:iec-62443-4-2:fr-7
+        assessable: true
+        depth: 2
+        description: "The component shall provide the capability to maintain essential functions when operating in a degraded mode due to a DoS event"
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: Protection contre le déni de service
+            description: "Le composant doit fournir la capacité de maintenir les fonctions essentielles lors du fonctionnement en mode dégradé suite à un événement de déni de service"

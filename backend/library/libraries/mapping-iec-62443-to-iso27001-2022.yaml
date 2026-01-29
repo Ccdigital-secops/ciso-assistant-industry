@@ -1,0 +1,136 @@
+urn: urn:intuitem:risk:library:mapping-iec-62443-to-iso27001-2022
+locale: en
+ref_id: mapping-iec-62443-to-iso27001-2022
+name: Mapping IEC 62443 to ISO 27001:2022
+description: "Mapping between IEC 62443 (Industrial Control Systems Security) and ISO 27001:2022 (Information Security Management)"
+version: 1
+provider: intuitem
+packager: intuitem
+dependencies:
+  - urn:intuitem:risk:library:iec-62443
+  - urn:intuitem:risk:library:iso27001-2022
+
+objects:
+  requirement_mapping_set:
+    urn: urn:intuitem:risk:req_mapping_set:iec-62443-to-iso27001-2022
+    ref_id: mapping-iec-62443-to-iso27001-2022
+    name: IEC 62443 to ISO 27001:2022 Mapping
+    source_framework_urn: urn:intuitem:risk:framework:iec-62443
+    target_framework_urn: urn:intuitem:risk:framework:iso27001-2022
+    requirement_mappings:
+      # Part 2-1 CSMS to ISO 27001
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.2
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.5.7
+        relationship: related
+        rationale: semantic
+        annotation: "Risk assessment processes align between CSMS and ISMS"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.2
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.5.1
+        relationship: related
+        rationale: semantic
+        annotation: "Cybersecurity policy maps to information security policy"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.4
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.6.3
+        relationship: related
+        rationale: semantic
+        annotation: "Security awareness and training"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.8
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.5.24
+        relationship: related
+        rationale: semantic
+        annotation: "Incident response planning"
+
+      # Part 3-3 System Requirements to ISO 27001
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.1
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.5.16
+        relationship: related
+        rationale: semantic
+        annotation: "Human user identification and authentication"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.3
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.5.18
+        relationship: related
+        rationale: semantic
+        annotation: "Account management and access rights"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.7
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.5.17
+        relationship: related
+        rationale: semantic
+        annotation: "Password strength requirements"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr2.1
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.8.2
+        relationship: related
+        rationale: semantic
+        annotation: "Authorization and privileged access rights"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr3.1
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.8.24
+        relationship: related
+        rationale: semantic
+        annotation: "Communication integrity and cryptography"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr3.2
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.8.7
+        relationship: related
+        rationale: semantic
+        annotation: "Malicious code protection"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr4.1
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.8.24
+        relationship: related
+        rationale: semantic
+        annotation: "Information confidentiality through cryptography"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr5.1
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.8.20
+        relationship: related
+        rationale: semantic
+        annotation: "Network segmentation and controls"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr5.2
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.8.22
+        relationship: related
+        rationale: semantic
+        annotation: "Zone boundary protection and network segregation"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr6.1
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.8.15
+        relationship: related
+        rationale: semantic
+        annotation: "Audit logging and monitoring"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr6.2
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.8.16
+        relationship: related
+        rationale: semantic
+        annotation: "Continuous monitoring activities"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr7.1
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.8.6
+        relationship: related
+        rationale: semantic
+        annotation: "Capacity management and DoS protection"
+
+      # Part 4-2 Component Requirements to ISO 27001
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr1.1
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.5.16
+        relationship: related
+        rationale: semantic
+        annotation: "Component-level user authentication"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr3.1
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.8.24
+        relationship: related
+        rationale: semantic
+        annotation: "Component communication integrity"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr3.4
+        target_requirement_urn: urn:intuitem:risk:req_node:iso27001-2022:a.8.32
+        relationship: related
+        rationale: semantic
+        annotation: "Software and information integrity verification"

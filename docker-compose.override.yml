@@ -1,0 +1,11 @@
+services:
+  backend:
+    volumes:
+      - ./backend/library:/code/library
+    environment:
+      - DJANGO_SUPERUSER_EMAIL=admin@ciso-assistant.local
+      - DJANGO_SUPERUSER_PASSWORD=admin123
+
+  huey:
+    volumes:
+      - ./backend/library:/code/library
