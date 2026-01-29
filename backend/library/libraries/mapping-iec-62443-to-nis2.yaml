@@ -1,0 +1,156 @@
+urn: urn:intuitem:risk:library:mapping-iec-62443-to-nis2
+locale: en
+ref_id: mapping-iec-62443-to-nis2
+name: Mapping IEC 62443 to NIS2 Directive (Annex 2024/2690)
+description: "Mapping between IEC 62443 (Industrial Control Systems Security) and NIS2 Directive technical requirements - Critical for essential and important entities in OT sectors"
+version: 1
+provider: intuitem
+packager: intuitem
+dependencies:
+  - urn:intuitem:risk:library:iec-62443
+  - urn:intuitem:risk:library:annex-technical-and-methodological-requirements-nis2
+
+objects:
+  requirement_mapping_set:
+    urn: urn:intuitem:risk:req_mapping_set:iec-62443-to-nis2
+    ref_id: mapping-iec-62443-to-nis2
+    name: IEC 62443 to NIS2 Directive Mapping
+    source_framework_urn: urn:intuitem:risk:framework:iec-62443
+    target_framework_urn: urn:intuitem:risk:framework:annex-technical-and-methodological-requirements-nis2
+    requirement_mappings:
+      # Part 2-1 CSMS to NIS2 Policy Requirements
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.2
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:1.1.1.a
+        relationship: related
+        rationale: semantic
+        annotation: "Cybersecurity policy approach for network and information systems"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.2
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:2.1.1
+        relationship: related
+        rationale: semantic
+        annotation: "Risk assessment methodology and processes"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.4
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:8.1.1
+        relationship: related
+        rationale: semantic
+        annotation: "Security awareness and training programs"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.8
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:6.1.1
+        relationship: related
+        rationale: semantic
+        annotation: "Incident response planning and management"
+
+      # Part 3-3 System Requirements to NIS2 Technical Measures
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.1
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:3.1.1.a
+        relationship: intersect
+        rationale: semantic
+        annotation: "Human user identification and authentication controls"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.3
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:3.1.1.b
+        relationship: intersect
+        rationale: semantic
+        annotation: "Account management and privileged access"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.7
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:3.1.1.c
+        relationship: intersect
+        rationale: semantic
+        annotation: "Password strength and authentication mechanisms"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr2.1
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:3.2.1.a
+        relationship: intersect
+        rationale: semantic
+        annotation: "Authorization enforcement and access control"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr3.1
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:3.4.1.a
+        relationship: intersect
+        rationale: semantic
+        annotation: "Communication integrity and cryptographic controls"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr3.2
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:3.6.1.a
+        relationship: intersect
+        rationale: semantic
+        annotation: "Malicious code protection and antivirus"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr4.1
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:3.4.1.b
+        relationship: intersect
+        rationale: semantic
+        annotation: "Data confidentiality through encryption"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr5.1
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:3.3.1.a
+        relationship: intersect
+        rationale: semantic
+        annotation: "Network segmentation for OT/IT separation"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr5.2
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:3.3.1.b
+        relationship: intersect
+        rationale: semantic
+        annotation: "Zone boundary protection and firewalls"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr6.1
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:7.1.1.a
+        relationship: intersect
+        rationale: semantic
+        annotation: "Audit logging and event monitoring"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr6.2
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:7.1.1.b
+        relationship: intersect
+        rationale: semantic
+        annotation: "Continuous monitoring and anomaly detection"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr7.1
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:4.1.1.a
+        relationship: intersect
+        rationale: semantic
+        annotation: "Denial of service protection and availability"
+
+      # Part 4-2 Component Requirements to NIS2
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr1.1
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:3.1.1.a
+        relationship: intersect
+        rationale: semantic
+        annotation: "Component-level user authentication"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr3.1
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:3.4.1.a
+        relationship: intersect
+        rationale: semantic
+        annotation: "Component communication integrity"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr3.4
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:3.5.1.a
+        relationship: intersect
+        rationale: semantic
+        annotation: "Software and firmware integrity verification"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr4.1
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:3.4.1.b
+        relationship: intersect
+        rationale: semantic
+        annotation: "Component data confidentiality"
+
+      # Supply Chain Security
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.2
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:5.1.1
+        relationship: related
+        rationale: semantic
+        annotation: "Supply chain risk assessment for OT components"
+
+      # Business Continuity
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr7.1
+        target_requirement_urn: urn:intuitem:risk:req_node:annex-technical-and-methodological-requirements-nis2:4.1.1.b
+        relationship: related
+        rationale: semantic
+        annotation: "Business continuity and disaster recovery for critical OT systems"

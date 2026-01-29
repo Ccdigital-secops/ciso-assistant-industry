@@ -1,0 +1,109 @@
+urn: urn:intuitem:risk:library:mapping-iec-62443-to-nist-csf-2.0
+locale: en
+ref_id: mapping-iec-62443-to-nist-csf-2.0
+name: Mapping IEC 62443 to NIST CSF 2.0
+description: "Mapping between IEC 62443 technical requirements and NIST Cybersecurity Framework 2.0 functions"
+version: 1
+provider: intuitem
+packager: intuitem
+dependencies:
+  - urn:intuitem:risk:library:iec-62443
+  - urn:intuitem:risk:library:nist-csf-2.0
+
+objects:
+  requirement_mapping_set:
+    urn: urn:intuitem:risk:req_mapping_set:iec-62443-to-nist-csf-2.0
+    ref_id: mapping-iec-62443-to-nist-csf-2.0
+    name: IEC 62443 to NIST CSF 2.0 Mapping
+    source_framework_urn: urn:intuitem:risk:framework:iec-62443
+    target_framework_urn: urn:intuitem:risk:framework:nist-csf-2.0
+    requirement_mappings:
+      # GOVERN
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.2
+        target_requirement_urn: urn:intuitem:risk:req_node:nist-csf-2.0:gv.rm-01
+        relationship: related
+        rationale: semantic
+        annotation: "Risk assessment aligns with risk management strategy"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.2
+        target_requirement_urn: urn:intuitem:risk:req_node:nist-csf-2.0:gv.po-01
+        relationship: related
+        rationale: semantic
+        annotation: "Cybersecurity policy and organizational context"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.4
+        target_requirement_urn: urn:intuitem:risk:req_node:nist-csf-2.0:gv.at-01
+        relationship: related
+        rationale: semantic
+        annotation: "Security awareness and training"
+
+      # IDENTIFY
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr5.1
+        target_requirement_urn: urn:intuitem:risk:req_node:nist-csf-2.0:id.am-04
+        relationship: related
+        rationale: semantic
+        annotation: "Network segmentation supports asset management"
+
+      # PROTECT
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.1
+        target_requirement_urn: urn:intuitem:risk:req_node:nist-csf-2.0:pr.aa-01
+        relationship: related
+        rationale: semantic
+        annotation: "Identity and authentication management"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.3
+        target_requirement_urn: urn:intuitem:risk:req_node:nist-csf-2.0:pr.aa-02
+        relationship: related
+        rationale: semantic
+        annotation: "Account management and identity lifecycle"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr2.1
+        target_requirement_urn: urn:intuitem:risk:req_node:nist-csf-2.0:pr.aa-04
+        relationship: related
+        rationale: semantic
+        annotation: "Authorization enforcement and access control"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr3.1
+        target_requirement_urn: urn:intuitem:risk:req_node:nist-csf-2.0:pr.ds-02
+        relationship: related
+        rationale: semantic
+        annotation: "Data in transit protection"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr4.1
+        target_requirement_urn: urn:intuitem:risk:req_node:nist-csf-2.0:pr.ds-01
+        relationship: related
+        rationale: semantic
+        annotation: "Data at rest protection"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr5.2
+        target_requirement_urn: urn:intuitem:risk:req_node:nist-csf-2.0:pr.ac-05
+        relationship: related
+        rationale: semantic
+        annotation: "Network integrity through segmentation"
+
+      # DETECT
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr6.1
+        target_requirement_urn: urn:intuitem:risk:req_node:nist-csf-2.0:de.cm-01
+        relationship: related
+        rationale: semantic
+        annotation: "Network monitoring and logging"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr6.2
+        target_requirement_urn: urn:intuitem:risk:req_node:nist-csf-2.0:de.cm-07
+        relationship: related
+        rationale: semantic
+        annotation: "Continuous monitoring for anomalies"
+
+      # RESPOND
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.8
+        target_requirement_urn: urn:intuitem:risk:req_node:nist-csf-2.0:rs.ma-01
+        relationship: related
+        rationale: semantic
+        annotation: "Incident response planning and management"
+
+      # RECOVER
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr7.1
+        target_requirement_urn: urn:intuitem:risk:req_node:nist-csf-2.0:rc.rp-01
+        relationship: related
+        rationale: semantic
+        annotation: "Recovery planning for availability"

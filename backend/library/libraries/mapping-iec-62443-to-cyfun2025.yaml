@@ -1,0 +1,81 @@
+urn: urn:intuitem:risk:library:mapping-iec-62443-to-cyfun2025
+locale: en
+ref_id: mapping-iec-62443-to-cyfun2025
+name: Mapping IEC 62443 to CyberFundamentals 2025
+description: "Mapping between IEC 62443 and CyberFundamentals 2025 - Both frameworks reference IEC 62443 principles"
+version: 1
+provider: intuitem
+packager: intuitem
+dependencies:
+  - urn:intuitem:risk:library:iec-62443
+  - urn:intuitem:risk:library:ccb-cyfun2025
+
+objects:
+  requirement_mapping_set:
+    urn: urn:intuitem:risk:req_mapping_set:iec-62443-to-cyfun2025
+    ref_id: mapping-iec-62443-to-cyfun2025
+    name: IEC 62443 to CyberFundamentals 2025 Mapping
+    source_framework_urn: urn:intuitem:risk:framework:iec-62443
+    target_framework_urn: urn:intuitem:risk:framework:ccb-cyfun2025
+    requirement_mappings:
+      # Risk Management
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.2
+        target_requirement_urn: urn:intuitem:risk:req_node:ccb-cyfun2025:gv.rm-01.1
+        relationship: related
+        rationale: semantic
+        annotation: "Risk assessment processes"
+
+      # Security Policy
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.2
+        target_requirement_urn: urn:intuitem:risk:req_node:ccb-cyfun2025:gv.rr-02.1
+        relationship: related
+        rationale: semantic
+        annotation: "Security policy and roles"
+
+      # Training and Awareness
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.4
+        target_requirement_urn: urn:intuitem:risk:req_node:ccb-cyfun2025:gv.oc-02.1
+        relationship: related
+        rationale: semantic
+        annotation: "Security awareness training"
+
+      # Identification and Authentication
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.1
+        target_requirement_urn: urn:intuitem:risk:req_node:ccb-cyfun2025:pr.aa-01
+        relationship: intersect
+        rationale: semantic
+        annotation: "User identification and authentication"
+
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.7
+        target_requirement_urn: urn:intuitem:risk:req_node:ccb-cyfun2025:pr.aa-03
+        relationship: intersect
+        rationale: semantic
+        annotation: "Password strength requirements"
+
+      # Access Control
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr2.1
+        target_requirement_urn: urn:intuitem:risk:req_node:ccb-cyfun2025:pr.aa-04
+        relationship: intersect
+        rationale: semantic
+        annotation: "Authorization enforcement"
+
+      # Network Segmentation
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr5.1
+        target_requirement_urn: urn:intuitem:risk:req_node:ccb-cyfun2025:pr.ac-05
+        relationship: intersect
+        rationale: semantic
+        annotation: "Network segmentation for OT/IT"
+
+      # Monitoring and Logging
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr6.1
+        target_requirement_urn: urn:intuitem:risk:req_node:ccb-cyfun2025:de.cm-01
+        relationship: intersect
+        rationale: semantic
+        annotation: "Audit logging and monitoring"
+
+      # Incident Response
+      - source_requirement_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.8
+        target_requirement_urn: urn:intuitem:risk:req_node:ccb-cyfun2025:rs.ma-01
+        relationship: related
+        rationale: semantic
+        annotation: "Incident response planning"

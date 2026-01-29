@@ -1,0 +1,668 @@
+urn: urn:intuitem:risk:library:iec-62443
+ref_id: IEC-62443
+version: 2
+name: IEC 62443 - Security for Industrial Automation and Control Systems
+description: "Comprehensive framework covering IEC 62443 series: Part 2-1 (CSMS), Part 3-3 (System), Part 4-2 (Component)"
+locale: en
+copyright: "IEC - International Electrotechnical Commission"
+provider: IEC
+packager: intuitem
+
+translations:
+  fr:
+    name: IEC 62443 - Sécurité des systèmes d'automatisation et de contrôle industriels
+    description: "Framework complet couvrant la série IEC 62443 : Partie 2-1 (CSMS), Partie 3-3 (Système), Partie 4-2 (Composant)"
+
+objects:
+  framework:
+    urn: urn:intuitem:risk:framework:iec-62443
+    name: IEC 62443 - Security for Industrial Automation and Control Systems
+    ref_id: IEC-62443
+    description: "The IEC 62443 series addresses cybersecurity for Industrial Automation and Control Systems (IACS). It provides a flexible framework to address current and future security vulnerabilities in industrial automation and control systems."
+
+    implementation_groups_definition:
+      - ref_id: SL1
+        name: "Security Level 1"
+        description: "Protection against casual or coincidental violation"
+      - ref_id: SL2
+        name: "Security Level 2"
+        description: "Protection against intentional violation using simple means with low resources, generic skills and low motivation"
+      - ref_id: SL3
+        name: "Security Level 3"
+        description: "Protection against intentional violation using sophisticated means with moderate resources, IACS specific skills and moderate motivation"
+      - ref_id: SL4
+        name: "Security Level 4"
+        description: "Protection against intentional violation using sophisticated means with extended resources, IACS specific skills and high motivation"
+
+    requirement_nodes:
+      # ==========================================
+      # PART 2-1: CSMS (Cybersecurity Management System)
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-62443:2-1
+        ref_id: "2-1"
+        name: "Part 2-1: CSMS Requirements"
+        description: "Requirements for establishing an IACS cybersecurity management system"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Partie 2-1 : Exigences CSMS"
+            description: "Exigences pour établir un système de management de la cybersécurité IACS"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.2
+        ref_id: "2-1.4.2"
+        name: "Risk Assessment"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:2-1
+        description: "Conduct risk assessments to identify system vulnerabilities, threats, and potential consequences"
+        assessable: true
+        depth: 2
+        translations:
+          fr:
+            name: "Évaluation des risques"
+            description: "Réaliser des évaluations de risques pour identifier les vulnérabilités système, les menaces et les conséquences potentielles"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.2.1
+        ref_id: "2-1.4.2.1"
+        name: "High-level Risk Assessment"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.2
+        description: "Identify IACS assets, assess threats and vulnerabilities at organizational level"
+        assessable: true
+        depth: 3
+        translations:
+          fr:
+            name: "Évaluation des risques de haut niveau"
+            description: "Identifier les actifs IACS, évaluer les menaces et vulnérabilités au niveau organisationnel"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.2.2
+        ref_id: "2-1.4.2.2"
+        name: "Detailed Risk Assessment"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.2
+        description: "Detailed analysis of zones and conduits, determine security levels and countermeasures"
+        assessable: true
+        depth: 3
+        translations:
+          fr:
+            name: "Évaluation détaillée des risques"
+            description: "Analyse détaillée des zones et conduits, déterminer les niveaux de sécurité et contre-mesures"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3
+        ref_id: "2-1.4.3"
+        name: "Security Policies and Procedures"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:2-1
+        description: "Establish and maintain cybersecurity policies and procedures"
+        assessable: true
+        depth: 2
+        translations:
+          fr:
+            name: "Politiques et procédures de sécurité"
+            description: "Établir et maintenir des politiques et procédures de cybersécurité"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.2
+        ref_id: "2-1.4.3.2"
+        name: "Cybersecurity Policy"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3
+        description: "Define high-level security policy with management commitment and scope"
+        assessable: true
+        depth: 3
+        translations:
+          fr:
+            name: "Politique de cybersécurité"
+            description: "Définir une politique de sécurité de haut niveau avec engagement de la direction et périmètre"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.3
+        ref_id: "2-1.4.3.3"
+        name: "Access Control Policy"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3
+        description: "Define who can access what resources under which circumstances"
+        assessable: true
+        depth: 3
+        translations:
+          fr:
+            name: "Politique de contrôle d'accès"
+            description: "Définir qui peut accéder à quelles ressources et dans quelles circonstances"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.4
+        ref_id: "2-1.4.3.4"
+        name: "Security Awareness and Training"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3
+        description: "Provide security awareness and role-based training programs"
+        assessable: true
+        depth: 3
+        translations:
+          fr:
+            name: "Sensibilisation et formation à la sécurité"
+            description: "Fournir des programmes de sensibilisation à la sécurité et de formation par rôle"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3.8
+        ref_id: "2-1.4.3.8"
+        name: "Incident Response"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:2-1.4.3
+        description: "Establish incident response plan and procedures"
+        assessable: true
+        depth: 3
+        translations:
+          fr:
+            name: "Réponse aux incidents"
+            description: "Établir un plan et des procédures de réponse aux incidents"
+
+      # ==========================================
+      # PART 3-3: SYSTEM SECURITY REQUIREMENTS
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3
+        ref_id: "3-3"
+        name: "Part 3-3: System Security Requirements"
+        description: "Security requirements and security levels for IACS systems"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Partie 3-3 : Exigences de sécurité système"
+            description: "Exigences de sécurité et niveaux de sécurité pour les systèmes IACS"
+
+      # FR 1: Identification and Authentication Control
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr1
+        ref_id: "3-3.FR1"
+        name: "FR 1: Identification and Authentication Control"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3
+        description: "Identify and authenticate all users (human, software, devices) before access"
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "FR 1 : Contrôle d'identification et d'authentification"
+            description: "Identifier et authentifier tous les utilisateurs (humains, logiciels, dispositifs) avant l'accès"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.1
+        ref_id: "SR 1.1"
+        name: "Human User Identification and Authentication"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr1
+        description: "Provide capability to identify and authenticate all human users on all interfaces"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Identification et authentification des utilisateurs humains"
+            description: "Fournir la capacité d'identifier et d'authentifier tous les utilisateurs humains sur toutes les interfaces"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.2
+        ref_id: "SR 1.2"
+        name: "Software Process and Device Identification"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr1
+        description: "Identify and authenticate software processes and devices"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Identification des processus logiciels et dispositifs"
+            description: "Identifier et authentifier les processus logiciels et les dispositifs"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.3
+        ref_id: "SR 1.3"
+        name: "Account Management"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr1
+        description: "Support management of all accounts including creation, modification, deletion"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Gestion des comptes"
+            description: "Supporter la gestion de tous les comptes incluant création, modification, suppression"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.5
+        ref_id: "SR 1.5"
+        name: "Authenticator Management"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr1
+        description: "Manage authenticators (passwords, tokens, certificates) securely"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Gestion des authentifiants"
+            description: "Gérer les authentifiants (mots de passe, jetons, certificats) de manière sécurisée"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr1.7
+        ref_id: "SR 1.7"
+        name: "Strength of Password-based Authentication"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr1
+        description: "Enforce configurable password strength (length, complexity, lifetime)"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Force de l'authentification par mot de passe"
+            description: "Appliquer une force de mot de passe configurable (longueur, complexité, durée de vie)"
+
+      # FR 2: Use Control
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr2
+        ref_id: "3-3.FR2"
+        name: "FR 2: Use Control"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3
+        description: "Enforce assigned privileges of authenticated users to perform requested actions"
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "FR 2 : Contrôle d'utilisation"
+            description: "Appliquer les privilèges assignés des utilisateurs authentifiés pour effectuer les actions demandées"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr2.1
+        ref_id: "SR 2.1"
+        name: "Authorization Enforcement"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr2
+        description: "Enforce authorization checks for all users, processes and devices"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Application des autorisations"
+            description: "Appliquer les vérifications d'autorisation pour tous les utilisateurs, processus et dispositifs"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr2.2
+        ref_id: "SR 2.2"
+        name: "Wireless Access Management"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr2
+        description: "Manage wireless access points and connections"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Gestion des accès sans fil"
+            description: "Gérer les points d'accès sans fil et les connexions"
+
+      # FR 3: System Integrity
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr3
+        ref_id: "3-3.FR3"
+        name: "FR 3: System Integrity"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3
+        description: "Ensure integrity of system to prevent unauthorized manipulation"
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "FR 3 : Intégrité du système"
+            description: "Assurer l'intégrité du système pour prévenir les manipulations non autorisées"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr3.1
+        ref_id: "SR 3.1"
+        name: "Communication Integrity"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr3
+        description: "Protect integrity of transmitted information"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Intégrité des communications"
+            description: "Protéger l'intégrité des informations transmises"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr3.2
+        ref_id: "SR 3.2"
+        name: "Malicious Code Protection"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr3
+        description: "Detect and prevent malicious code execution"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Protection contre les codes malveillants"
+            description: "Détecter et prévenir l'exécution de codes malveillants"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr3.3
+        ref_id: "SR 3.3"
+        name: "Security Functionality Verification"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr3
+        description: "Verify security functions operate correctly"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Vérification des fonctionnalités de sécurité"
+            description: "Vérifier que les fonctions de sécurité fonctionnent correctement"
+
+      # FR 4: Data Confidentiality
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr4
+        ref_id: "3-3.FR4"
+        name: "FR 4: Data Confidentiality"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3
+        description: "Ensure confidentiality of information on communication channels and in repositories"
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "FR 4 : Confidentialité des données"
+            description: "Assurer la confidentialité des informations sur les canaux de communication et dans les dépôts"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr4.1
+        ref_id: "SR 4.1"
+        name: "Information Confidentiality"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr4
+        description: "Protect confidentiality of information at rest and in transit"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Confidentialité des informations"
+            description: "Protéger la confidentialité des informations au repos et en transit"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr4.2
+        ref_id: "SR 4.2"
+        name: "Information Persistence"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr4
+        description: "Prevent unauthorized access to information on removable media"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Persistance des informations"
+            description: "Prévenir l'accès non autorisé aux informations sur supports amovibles"
+
+      # FR 5: Restricted Data Flow
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr5
+        ref_id: "3-3.FR5"
+        name: "FR 5: Restricted Data Flow"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3
+        description: "Segment control system via zones and conduits to limit unnecessary data flow"
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "FR 5 : Flux de données restreint"
+            description: "Segmenter le système de contrôle via zones et conduits pour limiter les flux de données inutiles"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr5.1
+        ref_id: "SR 5.1"
+        name: "Network Segmentation"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr5
+        description: "Logically segment control networks from non-control networks"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Segmentation réseau"
+            description: "Segmenter logiquement les réseaux de contrôle des réseaux non-contrôle"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr5.2
+        ref_id: "SR 5.2"
+        name: "Zone Boundary Protection"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr5
+        description: "Monitor and control communications at zone boundaries"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Protection des frontières de zone"
+            description: "Surveiller et contrôler les communications aux frontières des zones"
+
+      # FR 6: Timely Response to Events
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr6
+        ref_id: "3-3.FR6"
+        name: "FR 6: Timely Response to Events"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3
+        description: "Respond to security violations by notifying authority and taking corrective action"
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "FR 6 : Réponse rapide aux événements"
+            description: "Répondre aux violations de sécurité en notifiant l'autorité et en prenant des mesures correctives"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr6.1
+        ref_id: "SR 6.1"
+        name: "Audit Log Accessibility"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr6
+        description: "Provide read-only access to audit logs for authorized users"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Accessibilité des journaux d'audit"
+            description: "Fournir un accès en lecture seule aux journaux d'audit pour les utilisateurs autorisés"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr6.2
+        ref_id: "SR 6.2"
+        name: "Continuous Monitoring"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr6
+        description: "Monitor system for security violations and anomalies"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Surveillance continue"
+            description: "Surveiller le système pour détecter les violations de sécurité et anomalies"
+
+      # FR 7: Resource Availability
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr7
+        ref_id: "3-3.FR7"
+        name: "FR 7: Resource Availability"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3
+        description: "Ensure availability against degradation or denial of essential services"
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "FR 7 : Disponibilité des ressources"
+            description: "Assurer la disponibilité contre la dégradation ou le déni de services essentiels"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr7.1
+        ref_id: "SR 7.1"
+        name: "Denial of Service Protection"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr7
+        description: "Maintain essential functions during DoS events"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Protection contre le déni de service"
+            description: "Maintenir les fonctions essentielles pendant les événements de déni de service"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:3-3.sr7.2
+        ref_id: "SR 7.2"
+        name: "Resource Management"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:3-3.fr7
+        description: "Manage system resources to prevent exhaustion"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Gestion des ressources"
+            description: "Gérer les ressources système pour prévenir l'épuisement"
+
+      # ==========================================
+      # PART 4-2: COMPONENT REQUIREMENTS
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-62443:4-2
+        ref_id: "4-2"
+        name: "Part 4-2: Component Security Requirements"
+        description: "Technical security requirements for IACS components"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Partie 4-2 : Exigences de sécurité des composants"
+            description: "Exigences de sécurité techniques pour les composants IACS"
+
+      # Component FR 1
+      - urn: urn:intuitem:risk:req_node:iec-62443:4-2.fr1
+        ref_id: "4-2.FR1"
+        name: "FR 1: Identification and Authentication Control"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:4-2
+        description: "Component-level identification and authentication"
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "FR 1 : Contrôle d'identification et d'authentification"
+            description: "Identification et authentification au niveau composant"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr1.1
+        ref_id: "CR 1.1"
+        name: "Human User Identification and Authentication"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:4-2.fr1
+        description: "Component shall identify and authenticate all human users on all interfaces"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Identification et authentification des utilisateurs humains"
+            description: "Le composant doit identifier et authentifier tous les utilisateurs humains sur toutes les interfaces"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr1.2
+        ref_id: "CR 1.2"
+        name: "Software Process and Device Identification"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:4-2.fr1
+        description: "Component shall identify and authenticate software processes and devices"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Identification des processus logiciels et dispositifs"
+            description: "Le composant doit identifier et authentifier les processus logiciels et dispositifs"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr1.7
+        ref_id: "CR 1.7"
+        name: "Strength of Password-based Authentication"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:4-2.fr1
+        description: "Enforce configurable password strength requirements"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Force de l'authentification par mot de passe"
+            description: "Appliquer des exigences de force de mot de passe configurables"
+
+      # Component FR 2
+      - urn: urn:intuitem:risk:req_node:iec-62443:4-2.fr2
+        ref_id: "4-2.FR2"
+        name: "FR 2: Use Control"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:4-2
+        description: "Component-level authorization enforcement"
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "FR 2 : Contrôle d'utilisation"
+            description: "Application des autorisations au niveau composant"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr2.1
+        ref_id: "CR 2.1"
+        name: "Authorization Enforcement"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:4-2.fr2
+        description: "Component shall enforce authorization checks for all actions"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Application des autorisations"
+            description: "Le composant doit appliquer les vérifications d'autorisation pour toutes les actions"
+
+      # Component FR 3
+      - urn: urn:intuitem:risk:req_node:iec-62443:4-2.fr3
+        ref_id: "4-2.FR3"
+        name: "FR 3: System Integrity"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:4-2
+        description: "Component-level integrity protection"
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "FR 3 : Intégrité du système"
+            description: "Protection de l'intégrité au niveau composant"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr3.1
+        ref_id: "CR 3.1"
+        name: "Communication Integrity"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:4-2.fr3
+        description: "Component shall protect integrity of transmitted information"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Intégrité des communications"
+            description: "Le composant doit protéger l'intégrité des informations transmises"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr3.4
+        ref_id: "CR 3.4"
+        name: "Software and Information Integrity"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:4-2.fr3
+        description: "Verify integrity of software and information"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Intégrité des logiciels et informations"
+            description: "Vérifier l'intégrité des logiciels et informations"
+
+      # Component FR 4
+      - urn: urn:intuitem:risk:req_node:iec-62443:4-2.fr4
+        ref_id: "4-2.FR4"
+        name: "FR 4: Data Confidentiality"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:4-2
+        description: "Component-level data confidentiality"
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "FR 4 : Confidentialité des données"
+            description: "Confidentialité des données au niveau composant"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr4.1
+        ref_id: "CR 4.1"
+        name: "Information Confidentiality"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:4-2.fr4
+        description: "Component shall protect confidentiality of information at rest and in transit"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Confidentialité des informations"
+            description: "Le composant doit protéger la confidentialité des informations au repos et en transit"
+
+      # Component FR 7
+      - urn: urn:intuitem:risk:req_node:iec-62443:4-2.fr7
+        ref_id: "4-2.FR7"
+        name: "FR 7: Resource Availability"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:4-2
+        description: "Component-level resource availability"
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "FR 7 : Disponibilité des ressources"
+            description: "Disponibilité des ressources au niveau composant"
+
+      - urn: urn:intuitem:risk:req_node:iec-62443:4-2.cr7.1
+        ref_id: "CR 7.1"
+        name: "Denial of Service Protection"
+        parent_urn: urn:intuitem:risk:req_node:iec-62443:4-2.fr7
+        description: "Component shall maintain essential functions during DoS events"
+        assessable: true
+        depth: 3
+        implementation_groups: [SL1, SL2, SL3, SL4]
+        translations:
+          fr:
+            name: "Protection contre le déni de service"
+            description: "Le composant doit maintenir les fonctions essentielles pendant les événements de déni de service"
