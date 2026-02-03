@@ -1,0 +1,97 @@
+{$DOMAIN} {
+    # Configuration pour rssi.ccdigital.fr
+    
+    # Activation HTTPS automatique avec Let's Encrypt
+    tls {
+        protocols tls1.2 tls1.3
+    }
+
+    # En-têtes de sécurité
+    header {
+        # HSTS
+        Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+        # Prévention XSS
+        X-Content-Type-Options "nosniff"
+        X-Frame-Options "SAMEORIGIN"
+        X-XSS-Protection "1; mode=block"
+        # CSP
+        Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;"
+        # Référer
+        Referrer-Policy "strict-origin-when-cross-origin"
+        # Permissions
+        Permissions-Policy "geolocation=(), microphone=(), camera=()"
+        
+        # Suppression des headers révélant des infos serveur
+        -Server
+        -X-Powered-By
+    }
+
+    # Logs
+    log {
+        output file /var/log/caddy/access.log
+        format json
+    }
+
+    # Route pour l'API backend
+    handle /api/* {
+        reverse_proxy backend:8000 {
+            header_up Host {host}
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+            header_up X-Forwarded-Host {host}
+        }
+    }
+
+    # Route pour les fichiers statiques du backend
+    handle /static/* {
+        reverse_proxy backend:8000 {
+            header_up Host {host}
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+        }
+    }
+
+    # Route pour les fichiers média
+    handle /media/* {
+        reverse_proxy backend:8000 {
+            header_up Host {host}
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+        }
+    }
+
+    # Route pour l'admin Django
+    handle /admin/* {
+        reverse_proxy backend:8000 {
+            header_up Host {host}
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+        }
+    }
+
+    # Route par défaut pour le frontend SvelteKit
+    handle {
+        reverse_proxy frontend:3000 {
+            header_up Host {host}
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {remote_host}
+            header_up X-Forwarded-Proto {scheme}
+            header_up X-Forwarded-Host {host}
+        }
+    }
+
+    # Gestion des erreurs
+    handle_errors {
+        @502 expression {http.error.status_code} == 502
+        @503 expression {http.error.status_code} == 503
+        @504 expression {http.error.status_code} == 504
+        
+        respond @502 "Service temporairement indisponible. Veuillez réessayer dans quelques instants." 502
+        respond @503 "Service en maintenance. Veuillez réessayer dans quelques instants." 503
+        respond @504 "Délai d'attente dépassé. Veuillez réessayer." 504
+    }
+}
