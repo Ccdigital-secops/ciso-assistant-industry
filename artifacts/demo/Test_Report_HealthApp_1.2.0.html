@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Test Report - HealthApp v1.2.0</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f8fafc; color: #1e293b; }
+  .cover { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 60%, #4338ca 100%);
+            color: white; padding: 60px; }
+  .cover h1 { font-size: 2.2rem; margin: 0 0 8px; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 40px 30px; }
+  h2 { color: #4338ca; border-left: 4px solid #4338ca; padding-left: 12px; margin-top: 40px; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0; }
+  .stat { background: white; border-radius: 8px; padding: 20px; text-align: center;
+           box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .stat .num { font-size: 2rem; font-weight: 700; }
+  .stat .lbl { font-size: 0.8rem; color: #64748b; margin-top: 4px; }
+  .progress-bar { background: #e2e8f0; border-radius: 9999px; height: 12px; margin: 8px 0; }
+  .progress-fill { background: linear-gradient(90deg, #16a34a, #22c55e);
+                    height: 12px; border-radius: 9999px; width: 100%; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px;
+           overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-size: 0.82rem; }
+  th { background: #1e1b4b; color: white; padding: 10px 8px; text-align: left; }
+  td { padding: 10px 8px; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+  tr:hover td { background: #eef2ff; }
+  .verdict { text-align: center; padding: 30px; background: #dcfce7;
+              border-radius: 8px; margin: 24px 0; }
+  .verdict h3 { font-size: 1.5rem; color: #16a34a; margin: 0; }
+  .footer { background: #1e293b; color: #94a3b8; text-align: center; padding: 20px;
+             font-size: 0.8rem; margin-top: 60px; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <h1>🧪 Rapport de Tests</h1>
+  <div>HealthApp v1.2.0 — MedTech SAS</div>
+  <div style="margin-top:12px;opacity:0.8;font-size:0.85rem;">
+    IEC 62304 §5.5-5.7 | IEC 81001-5-1 §7.3 | ISO 13485 §7.3.5-7.3.6 | Généré le 18/02/2026
+  </div>
+</div>
+<div class="container">
+  <h2>Résumé d'Exécution</h2>
+  <div class="stats">
+    <div class="stat"><div class="num" style="color:#4338ca">8</div><div class="lbl">Tests totaux</div></div>
+    <div class="stat"><div class="num" style="color:#16a34a">8</div><div class="lbl">Réussis (PASS)</div></div>
+    <div class="stat"><div class="num" style="color:#dc2626">0</div><div class="lbl">Échoués (FAIL)</div></div>
+    <div class="stat"><div class="num" style="color:#4338ca">100%</div><div class="lbl">Taux de réussite</div></div>
+  </div>
+  <div class="progress-bar"><div class="progress-fill"></div></div>
+
+  <div class="verdict">
+    <h3>✅ VERDICT : APPROUVÉ POUR MISE EN PRODUCTION</h3>
+    <p style="margin:8px 0 0;color:#374151">
+      Tous les tests ont été exécutés avec succès. Le logiciel satisfait aux exigences IEC 62304 et IEC 81001-5-1.
+    </p>
+  </div>
+
+  <h2>Résumé par Type de Test</h2>
+  <table>
+    <thead><tr><th>Type de test</th><th>Total</th><th>Réussis</th><th>Échoués</th></tr></thead>
+    <tbody><tr><td>Unit Test</td><td>2</td><td>2</td><td>0</td></tr><tr><td>Integration Test</td><td>1</td><td>1</td><td>0</td></tr><tr><td>System Test</td><td>4</td><td>4</td><td>0</td></tr><tr><td>Penetration Test</td><td>1</td><td>1</td><td>0</td></tr></tbody>
+  </table>
+
+  <h2>Détail des Tests (IEC 62304 §5.5 / §5.6 / §5.7)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Type</th><th>IEC 62304</th><th>Nom du test</th><th>Exigence</th>
+        <th>Méthode</th><th>Résultat</th><th>Date</th><th>Testeur</th><th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>TC-001</strong></td>
+        <td><span style="background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:0.75rem">Unit Test</span></td>
+        <td><code style="font-size:0.75rem">§5.5</code></td>
+        <td>Authentication module - password validation</td>
+        <td style="font-size:0.8rem">REQ-SEC-001: Password must meet complexity requirements</td>
+        <td>Automated unit test (pytest)</td>
+        <td style="background:#dcfce7;font-weight:600;text-align:center">✅ PASS</td>
+        <td>2026-02-10</td>
+        <td>Dev Team</td>
+        <td style="font-size:0.8rem;color:#64748b">100% coverage on auth module</td>
+      </tr>
+      <tr>
+        <td><strong>TC-002</strong></td>
+        <td><span style="background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:0.75rem">Unit Test</span></td>
+        <td><code style="font-size:0.75rem">§5.5</code></td>
+        <td>Data encryption at rest - AES-256</td>
+        <td style="font-size:0.8rem">REQ-SEC-003: Patient data encrypted at rest</td>
+        <td>Automated unit test</td>
+        <td style="background:#dcfce7;font-weight:600;text-align:center">✅ PASS</td>
+        <td>2026-02-10</td>
+        <td>Dev Team</td>
+        <td style="font-size:0.8rem;color:#64748b">Verified with test vectors</td>
+      </tr>
+      <tr>
+        <td><strong>TC-003</strong></td>
+        <td><span style="background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:0.75rem">Integration Test</span></td>
+        <td><code style="font-size:0.75rem">§5.6</code></td>
+        <td>API authentication flow end-to-end</td>
+        <td style="font-size:0.8rem">REQ-SEC-002: All API endpoints require authentication</td>
+        <td>Automated integration test</td>
+        <td style="background:#dcfce7;font-weight:600;text-align:center">✅ PASS</td>
+        <td>2026-02-12</td>
+        <td>QA Team</td>
+        <td style="font-size:0.8rem;color:#64748b">Tested 47 endpoints</td>
+      </tr>
+      <tr>
+        <td><strong>TC-004</strong></td>
+        <td><span style="background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:0.75rem">System Test</span></td>
+        <td><code style="font-size:0.75rem">§5.7</code></td>
+        <td>SAST - Static Application Security Testing</td>
+        <td style="font-size:0.8rem">IEC 81001-5-1 §7.3: Security testing</td>
+        <td>SonarQube + Bandit</td>
+        <td style="background:#dcfce7;font-weight:600;text-align:center">✅ PASS</td>
+        <td>2026-02-14</td>
+        <td>Security Team</td>
+        <td style="font-size:0.8rem;color:#64748b">0 critical, 2 medium (accepted with justification)</td>
+      </tr>
+      <tr>
+        <td><strong>TC-005</strong></td>
+        <td><span style="background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:0.75rem">System Test</span></td>
+        <td><code style="font-size:0.75rem">§5.7</code></td>
+        <td>DAST - Dynamic Application Security Testing</td>
+        <td style="font-size:0.8rem">IEC 81001-5-1 §7.3: Security testing</td>
+        <td>OWASP ZAP</td>
+        <td style="background:#dcfce7;font-weight:600;text-align:center">✅ PASS</td>
+        <td>2026-02-15</td>
+        <td>Security Team</td>
+        <td style="font-size:0.8rem;color:#64748b">No high/critical findings</td>
+      </tr>
+      <tr>
+        <td><strong>TC-006</strong></td>
+        <td><span style="background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:0.75rem">Penetration Test</span></td>
+        <td><code style="font-size:0.75rem">§5.7</code></td>
+        <td>External penetration test</td>
+        <td style="font-size:0.8rem">IEC 81001-5-1 §7.3; MDR MDCG 2019-16</td>
+        <td>Manual pentest by external firm</td>
+        <td style="background:#dcfce7;font-weight:600;text-align:center">✅ PASS</td>
+        <td>2026-02-17</td>
+        <td>External Security Firm</td>
+        <td style="font-size:0.8rem;color:#64748b">Report ref: PENTEST-2026-001. 1 medium finding remediated.</td>
+      </tr>
+      <tr>
+        <td><strong>TC-007</strong></td>
+        <td><span style="background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:0.75rem">System Test</span></td>
+        <td><code style="font-size:0.75rem">§5.7</code></td>
+        <td>Audit log integrity verification</td>
+        <td style="font-size:0.8rem">REQ-SEC-004: Audit logs tamper-proof</td>
+        <td>Manual + automated verification</td>
+        <td style="background:#dcfce7;font-weight:600;text-align:center">✅ PASS</td>
+        <td>2026-02-16</td>
+        <td>QA Team</td>
+        <td style="font-size:0.8rem;color:#64748b">Log signing verified</td>
+      </tr>
+      <tr>
+        <td><strong>TC-008</strong></td>
+        <td><span style="background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:0.75rem">System Test</span></td>
+        <td><code style="font-size:0.75rem">§5.7</code></td>
+        <td>SBOM vulnerability scan</td>
+        <td style="font-size:0.8rem">FDA SBOM; IEC 62304 AMD1 SOUP</td>
+        <td>Trivy + OWASP Dependency-Check</td>
+        <td style="background:#dcfce7;font-weight:600;text-align:center">✅ PASS</td>
+        <td>2026-02-18</td>
+        <td>DevSecOps</td>
+        <td style="font-size:0.8rem;color:#64748b">0 critical CVEs in SBOM components</td>
+      </tr></tbody>
+  </table>
+
+  <h2>Traçabilité Exigences → Tests</h2>
+  <table>
+    <thead><tr><th>Exigence</th><th>Tests associés</th><th>Couverture</th></tr></thead>
+    <tbody>
+      <tr><td>IEC 81001-5-1 §6.2 (Authentification)</td><td>TC-001, TC-003</td><td style="color:#16a34a">✅ Couverte</td></tr>
+      <tr><td>IEC 81001-5-1 §6.3 (Cryptographie)</td><td>TC-002</td><td style="color:#16a34a">✅ Couverte</td></tr>
+      <tr><td>IEC 81001-5-1 §6.4 (Audit logs)</td><td>TC-007</td><td style="color:#16a34a">✅ Couverte</td></tr>
+      <tr><td>IEC 81001-5-1 §6.8 (SBOM/SOUP)</td><td>TC-008</td><td style="color:#16a34a">✅ Couverte</td></tr>
+      <tr><td>IEC 81001-5-1 §7.3 (Tests sécurité)</td><td>TC-004, TC-005, TC-006</td><td style="color:#16a34a">✅ Couverte</td></tr>
+      <tr><td>IEC 62304 §5.5 (Tests unitaires)</td><td>TC-001, TC-002</td><td style="color:#16a34a">✅ Couverte</td></tr>
+      <tr><td>IEC 62304 §5.6 (Tests intégration)</td><td>TC-003</td><td style="color:#16a34a">✅ Couverte</td></tr>
+      <tr><td>IEC 62304 §5.7 (Tests système)</td><td>TC-004, TC-005, TC-006, TC-007, TC-008</td><td style="color:#16a34a">✅ Couverte</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="footer">
+  MedTech SAS — Test Report IEC 62304 — HealthApp v1.2.0 | 18/02/2026
+</div>
+</body>
+</html>

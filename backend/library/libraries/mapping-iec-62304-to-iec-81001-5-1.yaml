@@ -1,0 +1,94 @@
+urn: urn:intuitem:risk:library:mapping-iec-62304-to-iec-81001-5-1
+ref_id: mapping-iec-62304-to-iec-81001-5-1
+version: 1
+name: Mapping IEC 62304 to IEC 81001-5-1
+description: "Mapping between IEC 62304:2006+AMD1:2015 (Medical Device Software Lifecycle) and IEC 81001-5-1 (Health Software Cybersecurity). Shows how software lifecycle activities integrate with cybersecurity requirements."
+locale: en
+copyright: "intuitem"
+provider: intuitem
+packager: intuitem
+
+objects:
+  requirement_mapping_set:
+    urn: urn:intuitem:risk:requirement_mapping_set:mapping-iec-62304-to-iec-81001-5-1
+    name: Mapping IEC 62304 to IEC 81001-5-1
+    description: "Cross-reference between IEC 62304 software lifecycle requirements and IEC 81001-5-1 cybersecurity requirements"
+    source_framework_urn: urn:intuitem:risk:framework:iec-62304-2006-amd1-2015
+    target_framework_urn: urn:intuitem:risk:framework:iec-81001-5-1
+    mappings:
+      # QMS → Security Management System
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:4.1
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:4.1
+        relationship: SUBSET_OF
+      # Risk Management → Security Risk Management
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:4.2
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.1
+        relationship: SUBSET_OF
+      # Software Classification → Security Requirements
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:4.3
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.1
+        relationship: SUBSET_OF
+      # Development Planning → Security Management
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:5.1
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:4.1
+        relationship: SUBSET_OF
+      # Requirements Analysis → Security Requirements
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:5.2
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.1
+        relationship: SUBSET_OF
+      # Architectural Design → Secure Architecture
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:5.3
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:7.1
+        relationship: SUBSET_OF
+      # Unit Implementation → Secure Coding
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:5.5
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:7.2
+        relationship: SUBSET_OF
+      # System Testing → Security Testing
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:5.7
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:7.3
+        relationship: SUBSET_OF
+      # Software Release → Security V&V
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:5.8
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:7.4
+        relationship: SUBSET_OF
+      # Maintenance Plan → Patch Management
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:6.1
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.6
+        relationship: SUBSET_OF
+      # Problem Analysis → Vulnerability Monitoring
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:6.2
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.1
+        relationship: SUBSET_OF
+      # Modification Implementation → Patch Management
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:6.3
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.6
+        relationship: SUBSET_OF
+      # Risk Control Measures → Security Risk Control
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:7.2
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.3
+        relationship: SUBSET_OF
+      # Configuration Management → SBOM
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:8.2
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.8
+        relationship: SUBSET_OF
+      # Change Control → Secure Configuration
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:8.3
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.7
+        relationship: SUBSET_OF
+      # Problem Reporting → Vulnerability Disclosure
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:9.1
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.1
+        relationship: SUBSET_OF
+      # Problem Resolution → Incident Response
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:9.2
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.2
+        relationship: SUBSET_OF
+      # Advisory Notices → Post-Market Surveillance
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:9.3
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.3
+        relationship: SUBSET_OF
+      # SOUP → Third-Party Components/SBOM
+      - source_node_urn: urn:intuitem:risk:req_node:iec-62304:amd1.soup
+        target_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.8
+        relationship: SUBSET_OF

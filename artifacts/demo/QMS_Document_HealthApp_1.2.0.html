@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Manuel Qualité - HealthApp v1.2.0</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f8fafc; color: #1e293b; }
+  .cover { background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 60%, #0369a1 100%);
+            color: white; padding: 80px 60px; min-height: 300px; }
+  .cover h1 { font-size: 2.4rem; margin: 0 0 10px; }
+  .cover .subtitle { font-size: 1.1rem; opacity: 0.85; margin: 8px 0; }
+  .cover .badges { margin-top: 30px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .badge { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
+            padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; }
+  .container { max-width: 1000px; margin: 0 auto; padding: 40px 30px; }
+  h2 { color: #0369a1; border-left: 4px solid #0369a1; padding-left: 12px;
+        margin-top: 40px; font-size: 1.3rem; }
+  h3 { color: #1e3a5f; margin-top: 24px; font-size: 1.05rem; }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+  .info-card { background: white; border: 1px solid #e2e8f0; border-radius: 8px;
+                padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  .info-card .label { font-size: 0.75rem; color: #64748b; text-transform: uppercase;
+                       letter-spacing: 0.05em; margin-bottom: 4px; }
+  .info-card .value { font-weight: 600; color: #1e293b; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; background: white;
+           border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  th { background: #1e3a5f; color: white; padding: 10px 14px; text-align: left;
+        font-size: 0.85rem; }
+  td { padding: 10px 14px; border-bottom: 1px solid #f1f5f9; font-size: 0.88rem; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f8fafc; }
+  .process-block { background: white; border: 1px solid #e2e8f0; border-radius: 8px;
+                    padding: 20px; margin: 12px 0; }
+  .process-block h4 { margin: 0 0 8px; color: #0369a1; }
+  .norm-tag { display: inline-block; background: #dbeafe; color: #1d4ed8;
+               padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin: 2px; }
+  .footer { background: #1e293b; color: #94a3b8; text-align: center;
+             padding: 20px; font-size: 0.8rem; margin-top: 60px; }
+  @media print { .cover { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div style="font-size:0.85rem;opacity:0.7;margin-bottom:20px;">CONFIDENTIEL — USAGE INTERNE</div>
+  <h1>📋 Manuel Qualité</h1>
+  <div class="subtitle">HealthApp — Version 1.2.0</div>
+  <div class="subtitle">MedTech SAS</div>
+  <div class="badges">
+    <span class="badge">ISO 13485:2016</span>
+    <span class="badge">IEC 62304 Classe C</span>
+    <span class="badge">ISO 14971:2019</span>
+    <span class="badge">IEC 81001-5-1</span>
+    <span class="badge">MDR UE 2017/745</span>
+    <span class="badge">FDA QMSR 2026</span>
+  </div>
+  <div style="margin-top:30px;font-size:0.85rem;opacity:0.7;">
+    Généré le 18/02/2026 | Référence : QMS-HEALTHAPP-1.2.0
+  </div>
+</div>
+
+<div class="container">
+
+  <h2>1. Informations du Document</h2>
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="label">Produit</div>
+      <div class="value">HealthApp</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Version</div>
+      <div class="value">1.2.0</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Classe logicielle (IEC 62304)</div>
+      <div class="value">Classe C</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Classe dispositif (MDR/FDA)</div>
+      <div class="value">Classe IIb</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Société</div>
+      <div class="value">MedTech SAS</div>
+    </div>
+    <div class="info-card">
+      <div class="label">Date d'émission</div>
+      <div class="value">18/02/2026</div>
+    </div>
+  </div>
+
+  <h2>2. Utilisation Prévue</h2>
+  <div class="process-block">
+    <p>Software intended to support clinical decision-making</p>
+  </div>
+
+  <h2>3. Domaine d'Application du SMQ</h2>
+  <p>Le présent Manuel Qualité définit le Système de Management de la Qualité (SMQ) de
+  <strong>MedTech SAS</strong> pour le développement, la maintenance et la surveillance
+  post-commercialisation du logiciel médical <strong>HealthApp</strong>.</p>
+
+  <h2>4. Référentiels Normatifs</h2>
+  <table>
+    <thead><tr><th>Norme</th><th>Titre</th><th>Application</th></tr></thead>
+    <tbody>
+      <tr><td>ISO 13485:2016</td><td>QMS Dispositifs Médicaux</td><td>SMQ global</td></tr>
+      <tr><td>IEC 62304:2006+AMD1</td><td>Cycle de vie logiciel médical</td><td>Développement logiciel</td></tr>
+      <tr><td>ISO 14971:2019</td><td>Gestion des risques DM</td><td>Risk management</td></tr>
+      <tr><td>IEC 81001-5-1:2021</td><td>Cybersécurité logiciels santé</td><td>Sécurité produit</td></tr>
+      <tr><td>MDR 2017/745 Annexe I</td><td>GSPR 17 - Exigences IT</td><td>Conformité UE</td></tr>
+      <tr><td>MDCG 2019-16</td><td>Guide cybersécurité DM</td><td>Conformité UE</td></tr>
+      <tr><td>FDA Cybersecurity 2023</td><td>Guide cybersécurité FDA</td><td>Conformité US</td></tr>
+      <tr><td>FDA QMSR 2026</td><td>21 CFR Part 820 révisé</td><td>Conformité US</td></tr>
+    </tbody>
+  </table>
+
+  <h2>5. Processus du SMQ</h2>
+
+  <div class="process-block">
+    <h4>5.1 Gestion de la Conception et du Développement (ISO 13485 §7.3)</h4>
+    <p>Le processus de développement suit le cycle de vie IEC 62304 avec les étapes :</p>
+    <ul>
+      <li>Planification du développement (§5.1)</li>
+      <li>Analyse des exigences logicielles (§5.2) — incluant exigences de sécurité IEC 81001-5-1</li>
+      <li>Conception architecturale (§5.3) — architecture de sécurité documentée</li>
+      <li>Conception détaillée (§5.4) — applicable Classe C</li>
+      <li>Implémentation et vérification unitaire (§5.5)</li>
+      <li>Intégration et tests d'intégration (§5.6)</li>
+      <li>Tests système (§5.7) — incluant SAST, DAST, tests de pénétration</li>
+      <li>Mise en production (§5.8)</li>
+    </ul>
+    <span class="norm-tag">ISO 13485 §7.3</span>
+    <span class="norm-tag">IEC 62304 §5</span>
+    <span class="norm-tag">IEC 81001-5-1 §7</span>
+  </div>
+
+  <div class="process-block">
+    <h4>5.2 Gestion des Risques (ISO 13485 §7.1 / ISO 14971)</h4>
+    <p>La gestion des risques couvre les risques de sécurité patient ET de cybersécurité :</p>
+    <ul>
+      <li>Plan de gestion des risques documenté (ISO 14971 §4.4)</li>
+      <li>Analyse des risques — identification des dangers et situations dangereuses (§5)</li>
+      <li>Évaluation des risques — critères d'acceptabilité définis (§6)</li>
+      <li>Maîtrise des risques — mesures de contrôle implémentées (§7)</li>
+      <li>Risques résiduels évalués et acceptés (§8)</li>
+      <li>Surveillance post-production (§9) — incluant vulnérabilités cybersécurité</li>
+    </ul>
+    <span class="norm-tag">ISO 14971:2019</span>
+    <span class="norm-tag">IEC 81001-5-1 §5</span>
+    <span class="norm-tag">ISO 13485 §7.1</span>
+  </div>
+
+  <div class="process-block">
+    <h4>5.3 Gestion de la Configuration et SBOM (IEC 62304 §8)</h4>
+    <ul>
+      <li>Contrôle de version (Git) pour tous les artefacts logiciels</li>
+      <li>SBOM maintenu en format CycloneDX/SPDX (FDA SBOM requirement)</li>
+      <li>Gestion des composants SOUP (IEC 62304 AMD1)</li>
+      <li>Surveillance des CVE sur les dépendances (IEC 81001-5-1 §6.8)</li>
+      <li>Procédure de gestion des modifications documentée</li>
+    </ul>
+    <span class="norm-tag">IEC 62304 §8</span>
+    <span class="norm-tag">FDA SBOM 2023</span>
+    <span class="norm-tag">IEC 81001-5-1 §6.8</span>
+  </div>
+
+  <div class="process-block">
+    <h4>5.4 Gestion des Non-Conformités et CAPA (ISO 13485 §8.5)</h4>
+    <ul>
+      <li>Procédure CAPA documentée pour toutes les non-conformités</li>
+      <li>Vulnérabilités de sécurité traitées comme non-conformités</li>
+      <li>Délais de remédiation basés sur le niveau de risque (CVSS)</li>
+      <li>Revue d'efficacité des actions correctives</li>
+    </ul>
+    <span class="norm-tag">ISO 13485 §8.5</span>
+    <span class="norm-tag">IEC 81001-5-1 §8.1</span>
+    <span class="norm-tag">FDA QMSR 2026</span>
+  </div>
+
+  <div class="process-block">
+    <h4>5.5 Surveillance Post-Commercialisation (MDR / FDA)</h4>
+    <ul>
+      <li>Plan de surveillance post-commercialisation (PMS Plan)</li>
+      <li>Surveillance des vulnérabilités cybersécurité (IEC 81001-5-1 §8.1)</li>
+      <li>Politique de divulgation coordonnée des vulnérabilités (CVD)</li>
+      <li>Reporting aux autorités réglementaires si nécessaire</li>
+      <li>Mises à jour de sécurité déployées dans les délais définis</li>
+    </ul>
+    <span class="norm-tag">MDR §83-86</span>
+    <span class="norm-tag">MDCG 2019-16</span>
+    <span class="norm-tag">FDA Cybersecurity 2023</span>
+    <span class="norm-tag">IEC 81001-5-1 §8</span>
+  </div>
+
+  <h2>6. Responsabilités</h2>
+  <table>
+    <thead><tr><th>Rôle</th><th>Responsabilités QMS</th></tr></thead>
+    <tbody>
+      <tr><td>Direction Générale</td><td>Engagement qualité, revue de direction, ressources (ISO 13485 §5.1)</td></tr>
+      <tr><td>Responsable Qualité (QA)</td><td>SMQ, audits internes, CAPA, documentation réglementaire</td></tr>
+      <tr><td>Responsable Sécurité (CISO)</td><td>Cybersécurité, IEC 81001-5-1, gestion des vulnérabilités</td></tr>
+      <tr><td>Responsable Développement</td><td>IEC 62304, SBOM, tests, revues de code sécurisé</td></tr>
+      <tr><td>Responsable Affaires Réglementaires</td><td>MDR/FDA, dossier technique, soumissions</td></tr>
+      <tr><td>Gestionnaire des Risques</td><td>ISO 14971, risk register, surveillance post-prod</td></tr>
+    </tbody>
+  </table>
+
+  <h2>7. Dossier Technique (Technical File)</h2>
+  <p>Le dossier technique inclut les documents suivants :</p>
+  <table>
+    <thead><tr><th>Document</th><th>Référence</th><th>Norme</th></tr></thead>
+    <tbody>
+      <tr><td>Manuel Qualité</td><td>QMS-HEALTHAPP-1.2.0</td><td>ISO 13485 §4.2.1</td></tr>
+      <tr><td>Risk Register (ISO 14971)</td><td>RISK-HEALTHAPP-1.2.0</td><td>ISO 14971 §4.5</td></tr>
+      <tr><td>SBOM (CycloneDX)</td><td>SBOM-HEALTHAPP-1.2.0</td><td>FDA SBOM / IEC 62304 AMD1</td></tr>
+      <tr><td>Rapport de Tests</td><td>TEST-HEALTHAPP-1.2.0</td><td>IEC 62304 §5.5-5.7</td></tr>
+      <tr><td>Plan de gestion des risques</td><td>RMP-HEALTHAPP-1.2.0</td><td>ISO 14971 §4.4</td></tr>
+      <tr><td>Architecture de sécurité</td><td>SEC-ARCH-HEALTHAPP-1.2.0</td><td>IEC 81001-5-1 §7.1</td></tr>
+      <tr><td>Plan de surveillance post-commercialisation</td><td>PMS-HEALTHAPP-1.2.0</td><td>MDR §83 / FDA</td></tr>
+    </tbody>
+  </table>
+
+</div>
+
+<div class="footer">
+  MedTech SAS — HealthApp v1.2.0 — Manuel Qualité ISO 13485:2016
+  | Généré le 18/02/2026 | CONFIDENTIEL
+</div>
+</body>
+</html>

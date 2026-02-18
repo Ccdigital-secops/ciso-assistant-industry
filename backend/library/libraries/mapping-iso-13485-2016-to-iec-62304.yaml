@@ -1,0 +1,86 @@
+urn: urn:intuitem:risk:library:mapping-iso-13485-2016-to-iec-62304
+ref_id: mapping-iso-13485-2016-to-iec-62304
+version: 1
+name: Mapping ISO 13485:2016 to IEC 62304
+description: "Mapping between ISO 13485:2016 (Medical Device QMS) and IEC 62304:2006+AMD1:2015 (Medical Device Software Lifecycle). Shows how QMS design controls map to software lifecycle processes."
+locale: en
+copyright: "intuitem"
+provider: intuitem
+packager: intuitem
+
+objects:
+  requirement_mapping_set:
+    urn: urn:intuitem:risk:requirement_mapping_set:mapping-iso-13485-2016-to-iec-62304
+    name: Mapping ISO 13485:2016 to IEC 62304
+    description: "Cross-reference between ISO 13485:2016 QMS requirements and IEC 62304 software lifecycle requirements"
+    source_framework_urn: urn:intuitem:risk:framework:iso-13485-2016
+    target_framework_urn: urn:intuitem:risk:framework:iec-62304-2006-amd1-2015
+    mappings:
+      # QMS General → Software QMS
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:4.1
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:4.1
+        relationship: SUBSET_OF
+      # Document Control → Configuration Management
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:4.2.3
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:8.1
+        relationship: SUBSET_OF
+      # Records Control → Configuration Items
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:4.2.4
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:8.2
+        relationship: SUBSET_OF
+      # Design Planning → Software Development Planning
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.1
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:5.1
+        relationship: SUBSET_OF
+      # Design Inputs → Software Requirements
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.2
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:5.2
+        relationship: SUBSET_OF
+      # Design Outputs → Software Architecture + Implementation
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.3
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:5.3
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.3
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:5.4
+        relationship: SUBSET_OF
+      # Design Review → Software Reviews
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.4
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:5.1
+        relationship: SUBSET_OF
+      # Design Verification → Software Verification
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.5
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:5.5
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.5
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:5.6
+        relationship: SUBSET_OF
+      # Design Validation → System Testing
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.6
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:5.7
+        relationship: SUBSET_OF
+      # Design Changes → Change Control
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.8
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:8.3
+        relationship: SUBSET_OF
+      # Design Files → Software Release
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.9
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:5.8
+        relationship: SUBSET_OF
+      # Purchasing (SOUP) → Legacy/SOUP
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.4
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:amd1.soup
+        relationship: SUBSET_OF
+      # Nonconforming Product → Problem Resolution
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:8.3
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:9.1
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:8.3
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:9.2
+        relationship: SUBSET_OF
+      # CAPA → Problem Resolution + Maintenance
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:8.5.2
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:6.3
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iso-13485-2016:8.5.2
+        target_node_urn: urn:intuitem:risk:req_node:iec-62304:9.2
+        relationship: SUBSET_OF
