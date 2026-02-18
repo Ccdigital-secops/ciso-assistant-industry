@@ -1,0 +1,530 @@
+urn: urn:intuitem:risk:library:iec-81001-5-1
+ref_id: IEC-81001-5-1
+version: 1
+name: IEC 81001-5-1 - Health Software Cybersecurity
+description: "IEC 81001-5-1:2021 - Health software and health IT systems safety, effectiveness and security - Part 5-1: Security - Activities in the product lifecycle. Aligned with MDR EU Annex I GSPR 17, MDCG 2019-16, FDA Cybersecurity Guidance 2023 and QMSR 2026."
+locale: en
+copyright: "IEC - International Electrotechnical Commission"
+provider: IEC
+packager: intuitem
+
+translations:
+  fr:
+    name: IEC 81001-5-1 - Cybersécurité des logiciels de santé
+    description: "IEC 81001-5-1:2021 - Sécurité, efficacité et sûreté des logiciels de santé et des systèmes IT de santé - Partie 5-1 : Sécurité - Activités dans le cycle de vie du produit. Aligné avec MDR UE Annexe I GSPR 17, MDCG 2019-16, FDA Cybersecurity Guidance 2023 et QMSR 2026."
+
+objects:
+  framework:
+    urn: urn:intuitem:risk:framework:iec-81001-5-1
+    ref_id: IEC-81001-5-1
+    name: IEC 81001-5-1 - Health Software Cybersecurity
+    description: "IEC 81001-5-1 specifies activities and tasks for security in the product lifecycle of health software and health IT systems. It provides requirements for manufacturers to manage cybersecurity risks throughout the product lifecycle, from design to decommissioning."
+    translations:
+      fr:
+        name: IEC 81001-5-1 - Cybersécurité des logiciels de santé
+        description: "IEC 81001-5-1 spécifie les activités et tâches de sécurité dans le cycle de vie des logiciels de santé et des systèmes IT de santé. Il fournit des exigences aux fabricants pour gérer les risques de cybersécurité tout au long du cycle de vie du produit."
+
+    implementation_groups_definition:
+      - ref_id: BASIC
+        name: "Basic Security"
+        description: "Minimum security requirements applicable to all health software"
+        translations:
+          fr:
+            name: "Sécurité de base"
+            description: "Exigences de sécurité minimales applicables à tous les logiciels de santé"
+      - ref_id: ENHANCED
+        name: "Enhanced Security"
+        description: "Enhanced security requirements for high-risk health software"
+        translations:
+          fr:
+            name: "Sécurité renforcée"
+            description: "Exigences de sécurité renforcées pour les logiciels de santé à risque élevé"
+
+    requirement_nodes:
+      # ==========================================
+      # SECTION 4: GENERAL REQUIREMENTS
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:4
+        ref_id: "4"
+        name: "General Requirements"
+        description: "General requirements for cybersecurity in health software lifecycle"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Exigences générales"
+            description: "Exigences générales pour la cybersécurité dans le cycle de vie des logiciels de santé"
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:4.1
+        ref_id: "4.1"
+        name: "Security Management System"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:4
+        description: "The manufacturer shall establish, implement, maintain and continually improve a security management system appropriate to the nature and scope of the health software."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Système de management de la sécurité"
+            description: "Le fabricant doit établir, mettre en œuvre, maintenir et améliorer continuellement un système de management de la sécurité adapté à la nature et à la portée du logiciel de santé."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:4.2
+        ref_id: "4.2"
+        name: "Security Roles and Responsibilities"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:4
+        description: "The manufacturer shall define and assign security roles and responsibilities within the organization."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Rôles et responsabilités en matière de sécurité"
+            description: "Le fabricant doit définir et attribuer des rôles et responsabilités en matière de sécurité au sein de l'organisation."
+
+      # ==========================================
+      # SECTION 5: SECURITY RISK MANAGEMENT
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:5
+        ref_id: "5"
+        name: "Security Risk Management"
+        description: "Security risk management activities throughout the product lifecycle"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Gestion des risques de sécurité"
+            description: "Activités de gestion des risques de sécurité tout au long du cycle de vie du produit"
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.1
+        ref_id: "5.1"
+        name: "Security Risk Management Process"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5
+        description: "The manufacturer shall plan, document and implement a security risk management process for health software. This process shall be aligned with ISO 14971 safety risk management."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Processus de gestion des risques de sécurité"
+            description: "Le fabricant doit planifier, documenter et mettre en œuvre un processus de gestion des risques de sécurité pour les logiciels de santé. Ce processus doit être aligné avec la gestion des risques de sécurité ISO 14971."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.2
+        ref_id: "5.2"
+        name: "Security Risk Assessment"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5
+        description: "The manufacturer shall perform security risk assessment including: identification of assets, threats, vulnerabilities; analysis of likelihood and impact; evaluation of security risks."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Évaluation des risques de sécurité"
+            description: "Le fabricant doit réaliser une évaluation des risques de sécurité incluant : identification des actifs, menaces, vulnérabilités ; analyse de la probabilité et de l'impact ; évaluation des risques de sécurité."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.3
+        ref_id: "5.3"
+        name: "Security Risk Control"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5
+        description: "The manufacturer shall identify and implement security risk controls to reduce identified risks to acceptable levels. Controls shall be verified for effectiveness."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Maîtrise des risques de sécurité"
+            description: "Le fabricant doit identifier et mettre en œuvre des mesures de maîtrise des risques de sécurité pour réduire les risques identifiés à des niveaux acceptables. L'efficacité des mesures doit être vérifiée."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.4
+        ref_id: "5.4"
+        name: "Residual Security Risk Evaluation"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5
+        description: "The manufacturer shall evaluate residual security risks after implementing controls and determine acceptability. Residual risks shall be documented in the security risk management file."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Évaluation des risques résiduels de sécurité"
+            description: "Le fabricant doit évaluer les risques résiduels de sécurité après la mise en œuvre des mesures et déterminer leur acceptabilité. Les risques résiduels doivent être documentés dans le dossier de gestion des risques de sécurité."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.5
+        ref_id: "5.5"
+        name: "Security Risk Management Review"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5
+        description: "The manufacturer shall review the security risk management process and its results at planned intervals and when significant changes occur."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Revue de la gestion des risques de sécurité"
+            description: "Le fabricant doit revoir le processus de gestion des risques de sécurité et ses résultats à intervalles planifiés et lors de changements significatifs."
+
+      # ==========================================
+      # SECTION 6: SECURITY REQUIREMENTS
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:6
+        ref_id: "6"
+        name: "Security Requirements"
+        description: "Security requirements for health software design and development"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Exigences de sécurité"
+            description: "Exigences de sécurité pour la conception et le développement des logiciels de santé"
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.1
+        ref_id: "6.1"
+        name: "Security Requirements Specification"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6
+        description: "The manufacturer shall specify security requirements derived from security risk management, applicable regulations (MDR Annex I GSPR 17, FDA Cybersecurity Guidance 2023), and intended use."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Spécification des exigences de sécurité"
+            description: "Le fabricant doit spécifier les exigences de sécurité dérivées de la gestion des risques de sécurité, des réglementations applicables (MDR Annexe I GSPR 17, FDA Cybersecurity Guidance 2023) et de l'utilisation prévue."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.2
+        ref_id: "6.2"
+        name: "Authentication and Authorization"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6
+        description: "The health software shall implement appropriate authentication and authorization mechanisms to ensure only authorized users and systems can access sensitive functions and data."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Authentification et autorisation"
+            description: "Le logiciel de santé doit mettre en œuvre des mécanismes d'authentification et d'autorisation appropriés pour garantir que seuls les utilisateurs et systèmes autorisés peuvent accéder aux fonctions et données sensibles."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.3
+        ref_id: "6.3"
+        name: "Cryptography"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6
+        description: "The health software shall implement appropriate cryptographic controls to protect data confidentiality and integrity, both at rest and in transit."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Cryptographie"
+            description: "Le logiciel de santé doit mettre en œuvre des contrôles cryptographiques appropriés pour protéger la confidentialité et l'intégrité des données, au repos et en transit."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.4
+        ref_id: "6.4"
+        name: "Audit Logging"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6
+        description: "The health software shall implement audit logging capabilities to record security-relevant events, user actions, and system changes. Logs shall be protected against unauthorized modification."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Journalisation d'audit"
+            description: "Le logiciel de santé doit mettre en œuvre des capacités de journalisation d'audit pour enregistrer les événements pertinents pour la sécurité, les actions des utilisateurs et les modifications du système. Les journaux doivent être protégés contre les modifications non autorisées."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.5
+        ref_id: "6.5"
+        name: "Data Integrity"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6
+        description: "The health software shall implement mechanisms to ensure the integrity of patient data and clinical information, preventing unauthorized modification, deletion or corruption."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Intégrité des données"
+            description: "Le logiciel de santé doit mettre en œuvre des mécanismes pour assurer l'intégrité des données patients et des informations cliniques, en prévenant les modifications, suppressions ou corruptions non autorisées."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.6
+        ref_id: "6.6"
+        name: "Software Updates and Patch Management"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6
+        description: "The manufacturer shall implement a process for timely delivery of security updates and patches. The update mechanism shall be secure and authenticated. Aligned with FDA Cybersecurity Guidance 2023 Section V."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Mises à jour logicielles et gestion des correctifs"
+            description: "Le fabricant doit mettre en œuvre un processus de livraison rapide des mises à jour et correctifs de sécurité. Le mécanisme de mise à jour doit être sécurisé et authentifié. Aligné avec FDA Cybersecurity Guidance 2023 Section V."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.7
+        ref_id: "6.7"
+        name: "Secure Configuration"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6
+        description: "The health software shall support secure configuration and shall not rely on insecure default settings. Configuration options that affect security shall be documented."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Configuration sécurisée"
+            description: "Le logiciel de santé doit prendre en charge une configuration sécurisée et ne doit pas reposer sur des paramètres par défaut non sécurisés. Les options de configuration affectant la sécurité doivent être documentées."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.8
+        ref_id: "6.8"
+        name: "Third-Party Components and SBOM"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6
+        description: "The manufacturer shall maintain a Software Bill of Materials (SBOM) for all third-party and open-source components. Security vulnerabilities in these components shall be monitored and addressed. Required by FDA Cybersecurity Guidance 2023."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Composants tiers et SBOM"
+            description: "Le fabricant doit maintenir une nomenclature logicielle (SBOM) pour tous les composants tiers et open source. Les vulnérabilités de sécurité dans ces composants doivent être surveillées et traitées. Requis par FDA Cybersecurity Guidance 2023."
+
+      # ==========================================
+      # SECTION 7: SECURE DESIGN AND DEVELOPMENT
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:7
+        ref_id: "7"
+        name: "Secure Design and Development"
+        description: "Security activities during design and development of health software"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Conception et développement sécurisés"
+            description: "Activités de sécurité lors de la conception et du développement des logiciels de santé"
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:7.1
+        ref_id: "7.1"
+        name: "Secure Architecture Design"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:7
+        description: "The manufacturer shall apply security-by-design principles including defense-in-depth, least privilege, fail-safe defaults, and separation of duties. Threat modeling shall be performed."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Conception d'architecture sécurisée"
+            description: "Le fabricant doit appliquer les principes de sécurité dès la conception, notamment la défense en profondeur, le moindre privilège, les valeurs par défaut sécurisées et la séparation des tâches. Une modélisation des menaces doit être réalisée."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:7.2
+        ref_id: "7.2"
+        name: "Secure Coding Practices"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:7
+        description: "The manufacturer shall implement secure coding practices and standards (e.g., OWASP, CERT) to prevent common vulnerabilities. Code reviews shall include security aspects."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Pratiques de codage sécurisé"
+            description: "Le fabricant doit mettre en œuvre des pratiques et normes de codage sécurisé (ex. OWASP, CERT) pour prévenir les vulnérabilités courantes. Les revues de code doivent inclure les aspects de sécurité."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:7.3
+        ref_id: "7.3"
+        name: "Security Testing"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:7
+        description: "The manufacturer shall perform security testing including: static analysis (SAST), dynamic analysis (DAST), penetration testing, and vulnerability scanning. Testing shall be commensurate with risk."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Tests de sécurité"
+            description: "Le fabricant doit réaliser des tests de sécurité incluant : analyse statique (SAST), analyse dynamique (DAST), tests de pénétration et analyse de vulnérabilités. Les tests doivent être proportionnels au risque."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:7.4
+        ref_id: "7.4"
+        name: "Security Verification and Validation"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:7
+        description: "The manufacturer shall verify and validate that security requirements are met before release. Security verification shall be integrated with the overall V&V process per IEC 62304."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Vérification et validation de la sécurité"
+            description: "Le fabricant doit vérifier et valider que les exigences de sécurité sont satisfaites avant la mise sur le marché. La vérification de la sécurité doit être intégrée au processus global de V&V selon IEC 62304."
+
+      # ==========================================
+      # SECTION 8: SECURITY IN PRODUCTION AND POST-PRODUCTION
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:8
+        ref_id: "8"
+        name: "Security in Production and Post-Production"
+        description: "Security activities during production, deployment and post-market surveillance"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Sécurité en production et post-production"
+            description: "Activités de sécurité pendant la production, le déploiement et la surveillance post-commercialisation"
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.1
+        ref_id: "8.1"
+        name: "Vulnerability Monitoring and Disclosure"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8
+        description: "The manufacturer shall implement a process to monitor, identify and respond to security vulnerabilities in deployed health software. A coordinated vulnerability disclosure policy shall be established. Required by FDA Cybersecurity Guidance 2023 and MDR MDCG 2019-16."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Surveillance et divulgation des vulnérabilités"
+            description: "Le fabricant doit mettre en œuvre un processus pour surveiller, identifier et répondre aux vulnérabilités de sécurité dans les logiciels de santé déployés. Une politique de divulgation coordonnée des vulnérabilités doit être établie. Requis par FDA Cybersecurity Guidance 2023 et MDR MDCG 2019-16."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.2
+        ref_id: "8.2"
+        name: "Security Incident Response"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8
+        description: "The manufacturer shall establish and maintain a security incident response plan. The plan shall include procedures for detection, analysis, containment, eradication, recovery and post-incident review."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Réponse aux incidents de sécurité"
+            description: "Le fabricant doit établir et maintenir un plan de réponse aux incidents de sécurité. Le plan doit inclure des procédures de détection, d'analyse, de confinement, d'éradication, de récupération et de revue post-incident."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.3
+        ref_id: "8.3"
+        name: "Post-Market Security Surveillance"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8
+        description: "The manufacturer shall implement post-market security surveillance to proactively identify security issues in deployed products. This shall be integrated with the post-market clinical follow-up required by MDR EU."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Surveillance de la sécurité post-commercialisation"
+            description: "Le fabricant doit mettre en œuvre une surveillance de la sécurité post-commercialisation pour identifier proactivement les problèmes de sécurité dans les produits déployés. Cela doit être intégré au suivi clinique post-commercialisation requis par le MDR UE."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.4
+        ref_id: "8.4"
+        name: "End-of-Life Security Management"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8
+        description: "The manufacturer shall define and communicate the security support lifecycle for health software, including end-of-life dates and transition plans to ensure continued security of patient data."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Gestion de la sécurité en fin de vie"
+            description: "Le fabricant doit définir et communiquer le cycle de vie du support de sécurité pour les logiciels de santé, y compris les dates de fin de vie et les plans de transition pour assurer la sécurité continue des données patients."
+
+      # ==========================================
+      # SECTION 9: MDR EU ALIGNMENT (ANNEX I GSPR 17 / MDCG 2019-16)
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:mdr
+        ref_id: "MDR"
+        name: "MDR EU Alignment - Annex I GSPR 17 / MDCG 2019-16"
+        description: "Requirements aligned with EU Medical Device Regulation (MDR 2017/745) Annex I General Safety and Performance Requirements (GSPR) 17 and MDCG 2019-16 guidance on cybersecurity for medical devices"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Alignement MDR UE - Annexe I GSPR 17 / MDCG 2019-16"
+            description: "Exigences alignées avec le Règlement UE sur les Dispositifs Médicaux (MDR 2017/745) Annexe I Exigences Générales de Sécurité et de Performance (GSPR) 17 et le guide MDCG 2019-16 sur la cybersécurité des dispositifs médicaux"
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:mdr.gspr17
+        ref_id: "MDR.GSPR17"
+        name: "GSPR 17 - IT Security Requirements"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:mdr
+        description: "MDR Annex I GSPR 17: Devices that incorporate software or that are software themselves shall be designed and manufactured in accordance with the state of the art taking into account the principles of development lifecycle, risk management, including information security, verification and validation."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "GSPR 17 - Exigences de sécurité informatique"
+            description: "MDR Annexe I GSPR 17 : Les dispositifs qui incorporent un logiciel ou qui sont eux-mêmes des logiciels doivent être conçus et fabriqués conformément à l'état de l'art en tenant compte des principes du cycle de développement, de la gestion des risques, y compris la sécurité de l'information, la vérification et la validation."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:mdr.mdcg2019-16
+        ref_id: "MDR.MDCG2019-16"
+        name: "MDCG 2019-16 - Cybersecurity Guidance"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:mdr
+        description: "MDCG 2019-16 guidance on cybersecurity for medical devices: manufacturers shall implement appropriate cybersecurity measures proportionate to the risk, document cybersecurity in the technical file, and maintain post-market surveillance."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "MDCG 2019-16 - Guide cybersécurité"
+            description: "Guide MDCG 2019-16 sur la cybersécurité des dispositifs médicaux : les fabricants doivent mettre en œuvre des mesures de cybersécurité appropriées proportionnelles au risque, documenter la cybersécurité dans le dossier technique et maintenir une surveillance post-commercialisation."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:mdr.technical-file
+        ref_id: "MDR.TF"
+        name: "Technical File - Cybersecurity Documentation"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:mdr
+        description: "The manufacturer shall include in the technical file: security risk management plan and report, security architecture description, list of cybersecurity controls implemented, SBOM, vulnerability management procedure, and post-market surveillance plan for cybersecurity."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Dossier technique - Documentation cybersécurité"
+            description: "Le fabricant doit inclure dans le dossier technique : plan et rapport de gestion des risques de sécurité, description de l'architecture de sécurité, liste des contrôles de cybersécurité mis en œuvre, SBOM, procédure de gestion des vulnérabilités et plan de surveillance post-commercialisation pour la cybersécurité."
+
+      # ==========================================
+      # SECTION 10: FDA ALIGNMENT (CYBERSECURITY 2023 / QMSR 2026)
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:fda
+        ref_id: "FDA"
+        name: "FDA Alignment - Cybersecurity Guidance 2023 / QMSR 2026"
+        description: "Requirements aligned with FDA Cybersecurity in Medical Devices Guidance (September 2023) and Quality Management System Regulation (QMSR) 2026"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Alignement FDA - Cybersecurity Guidance 2023 / QMSR 2026"
+            description: "Exigences alignées avec le guide FDA sur la cybersécurité des dispositifs médicaux (septembre 2023) et le règlement sur le système de management de la qualité (QMSR) 2026"
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:fda.premarket
+        ref_id: "FDA.PREMARKET"
+        name: "FDA Premarket Cybersecurity Submissions"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:fda
+        description: "FDA Cybersecurity Guidance 2023: Premarket submissions shall include a cybersecurity management plan, threat modeling, security architecture, testing documentation, SBOM, and a plan for post-market cybersecurity monitoring and patching."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Soumissions préalables à la mise sur le marché FDA"
+            description: "FDA Cybersecurity Guidance 2023 : Les soumissions préalables à la mise sur le marché doivent inclure un plan de gestion de la cybersécurité, une modélisation des menaces, une architecture de sécurité, la documentation des tests, un SBOM et un plan de surveillance et de correction de la cybersécurité post-commercialisation."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:fda.postmarket
+        ref_id: "FDA.POSTMARKET"
+        name: "FDA Post-Market Cybersecurity Management"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:fda
+        description: "FDA Cybersecurity Guidance 2023: Manufacturers shall implement a structured and comprehensive approach to managing post-market cybersecurity, including monitoring for vulnerabilities, coordinated disclosure, and timely remediation."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Gestion post-commercialisation FDA"
+            description: "FDA Cybersecurity Guidance 2023 : Les fabricants doivent mettre en œuvre une approche structurée et complète de la gestion de la cybersécurité post-commercialisation, incluant la surveillance des vulnérabilités, la divulgation coordonnée et la remédiation rapide."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:fda.qmsr
+        ref_id: "FDA.QMSR"
+        name: "QMSR 2026 - Quality Management System"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:fda
+        description: "FDA QMSR 2026 (21 CFR Part 820 revised): Aligns US QMS requirements with ISO 13485. Cybersecurity shall be integrated into the QMS, including design controls, corrective and preventive actions (CAPA), and complaint handling for security incidents."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "QMSR 2026 - Système de management de la qualité"
+            description: "FDA QMSR 2026 (21 CFR Partie 820 révisée) : Aligne les exigences QMS américaines avec ISO 13485. La cybersécurité doit être intégrée dans le QMS, y compris les contrôles de conception, les actions correctives et préventives (CAPA) et la gestion des réclamations pour les incidents de sécurité."
+
+      - urn: urn:intuitem:risk:req_node:iec-81001-5-1:fda.sbom
+        ref_id: "FDA.SBOM"
+        name: "FDA SBOM Requirements"
+        parent_urn: urn:intuitem:risk:req_node:iec-81001-5-1:fda
+        description: "FDA Cybersecurity Guidance 2023 Section VI.C: Manufacturers shall provide a Software Bill of Materials (SBOM) in a machine-readable format (e.g., SPDX, CycloneDX) listing all commercial, open-source, and off-the-shelf software components."
+        assessable: true
+        depth: 2
+        implementation_groups: [BASIC, ENHANCED]
+        translations:
+          fr:
+            name: "Exigences SBOM FDA"
+            description: "FDA Cybersecurity Guidance 2023 Section VI.C : Les fabricants doivent fournir une nomenclature logicielle (SBOM) dans un format lisible par machine (ex. SPDX, CycloneDX) listant tous les composants logiciels commerciaux, open source et sur étagère."

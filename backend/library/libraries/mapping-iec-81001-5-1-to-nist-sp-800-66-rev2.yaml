@@ -1,0 +1,50 @@
+urn: urn:intuitem:risk:library:mapping-iec-81001-5-1-to-nist-sp-800-66-rev2
+ref_id: mapping-iec-81001-5-1-to-nist-sp-800-66-rev2
+version: 1
+name: Mapping IEC 81001-5-1 to NIST SP 800-66 Rev.2 (HIPAA)
+description: "Mapping between IEC 81001-5-1 (Health Software Cybersecurity) and NIST SP 800-66 Rev.2 (Implementing HIPAA Security Rule). Enables US healthcare organizations to align IEC 81001-5-1 with HIPAA compliance."
+locale: en
+copyright: "intuitem"
+provider: intuitem
+packager: intuitem
+
+objects:
+  requirement_mapping_set:
+    urn: urn:intuitem:risk:requirement_mapping_set:mapping-iec-81001-5-1-to-nist-sp-800-66-rev2
+    name: Mapping IEC 81001-5-1 to NIST SP 800-66 Rev.2
+    description: "Cross-reference between IEC 81001-5-1 health software cybersecurity requirements and NIST SP 800-66 Rev.2 HIPAA security implementation guidance"
+    source_framework_urn: urn:intuitem:risk:framework:iec-81001-5-1
+    target_framework_urn: urn:intuitem:risk:framework:nist-sp-800-66-rev2
+    mappings:
+      # Security Management System → Administrative Safeguards
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:4.1
+        target_node_urn: urn:intuitem:risk:req_node:nist-sp-800-66-rev2:164.308(a)(1)
+        relationship: SUBSET_OF
+      # Security Risk Assessment → Risk Analysis
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.2
+        target_node_urn: urn:intuitem:risk:req_node:nist-sp-800-66-rev2:164.308(a)(1)(ii)(A)
+        relationship: SUBSET_OF
+      # Security Risk Control → Risk Management
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.3
+        target_node_urn: urn:intuitem:risk:req_node:nist-sp-800-66-rev2:164.308(a)(1)(ii)(B)
+        relationship: SUBSET_OF
+      # Authentication → Access Control
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.2
+        target_node_urn: urn:intuitem:risk:req_node:nist-sp-800-66-rev2:164.312(a)(1)
+        relationship: SUBSET_OF
+      # Cryptography → Transmission Security
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.3
+        target_node_urn: urn:intuitem:risk:req_node:nist-sp-800-66-rev2:164.312(e)(1)
+        relationship: SUBSET_OF
+      # Audit Logging → Audit Controls
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.4
+        target_node_urn: urn:intuitem:risk:req_node:nist-sp-800-66-rev2:164.312(b)
+        relationship: SUBSET_OF
+      # Data Integrity → Integrity Controls
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.5
+        target_node_urn: urn:intuitem:risk:req_node:nist-sp-800-66-rev2:164.312(c)(1)
+        relationship: SUBSET_OF
+      # Incident Response → Security Incident Procedures
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.2
+        target_node_urn: urn:intuitem:risk:req_node:nist-sp-800-66-rev2:164.308(a)(6)
+        relationship: SUBSET_OF

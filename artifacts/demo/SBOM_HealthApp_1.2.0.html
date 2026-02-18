@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>SBOM - HealthApp v1.2.0</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f8fafc; color: #1e293b; }
+  .cover { background: linear-gradient(135deg, #134e4a 0%, #0f766e 60%, #0d9488 100%);
+            color: white; padding: 60px; }
+  .cover h1 { font-size: 2.2rem; margin: 0 0 8px; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 40px 30px; }
+  h2 { color: #0f766e; border-left: 4px solid #0d9488; padding-left: 12px; margin-top: 40px; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0; }
+  .stat { background: white; border-radius: 8px; padding: 20px; text-align: center;
+           box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .stat .num { font-size: 2rem; font-weight: 700; color: #0f766e; }
+  .stat .lbl { font-size: 0.8rem; color: #64748b; margin-top: 4px; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px;
+           overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-size: 0.82rem; }
+  th { background: #134e4a; color: white; padding: 10px 8px; text-align: left; }
+  td { padding: 10px 8px; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 20px; border-radius: 8px;
+         overflow-x: auto; font-size: 0.78rem; line-height: 1.5; }
+  .footer { background: #1e293b; color: #94a3b8; text-align: center; padding: 20px;
+             font-size: 0.8rem; margin-top: 60px; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <h1>📦 Software Bill of Materials (SBOM)</h1>
+  <div>HealthApp v1.2.0 — MedTech SAS</div>
+  <div style="margin-top:12px;opacity:0.8;font-size:0.85rem;">
+    Format CycloneDX 1.5 | FDA Cybersecurity 2023 | IEC 62304 AMD1 (SOUP) | Généré le 18/02/2026
+  </div>
+</div>
+<div class="container">
+  <h2>Résumé</h2>
+  <div class="stats">
+    <div class="stat"><div class="num">5</div><div class="lbl">Composants totaux</div></div>
+    <div class="stat"><div class="num">4</div><div class="lbl">Composants SOUP</div></div>
+    <div class="stat"><div class="num">0</div><div class="lbl">CVEs connus</div></div>
+    <div class="stat"><div class="num">0</div><div class="lbl">Risque élevé</div></div>
+  </div>
+
+  <h2>Inventaire des Composants</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nom</th><th>Version</th><th>Type</th><th>Licence</th><th>Fournisseur</th>
+        <th>PURL</th><th>CVEs connus</th><th>Niveau risque</th><th>Classification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>react</strong></td>
+        <td>18.2.0</td>
+        <td>library</td>
+        <td>MIT</td>
+        <td>Meta Platforms</td>
+        <td><code style="font-size:0.75rem">pkg:npm/react@18.2.0</code></td>
+        <td>None</td>
+        <td style="background:#dcfce7;font-weight:600;">Low</td>
+        <td><span style="background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:0.75rem">SOUP</span></td>
+      </tr>
+      <tr>
+        <td><strong>django</strong></td>
+        <td>4.2.9</td>
+        <td>framework</td>
+        <td>BSD-3-Clause</td>
+        <td>Django Software Foundation</td>
+        <td><code style="font-size:0.75rem">pkg:pypi/django@4.2.9</code></td>
+        <td>None</td>
+        <td style="background:#dcfce7;font-weight:600;">Low</td>
+        <td><span style="background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:0.75rem">SOUP</span></td>
+      </tr>
+      <tr>
+        <td><strong>postgresql</strong></td>
+        <td>15.4</td>
+        <td>database</td>
+        <td>PostgreSQL</td>
+        <td>PostgreSQL Global Development Group</td>
+        <td><code style="font-size:0.75rem">pkg:generic/postgresql@15.4</code></td>
+        <td>None</td>
+        <td style="background:#dcfce7;font-weight:600;">Low</td>
+        <td><span style="background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:0.75rem">SOUP</span></td>
+      </tr>
+      <tr>
+        <td><strong>cryptography</strong></td>
+        <td>41.0.7</td>
+        <td>library</td>
+        <td>Apache-2.0</td>
+        <td>Python Cryptographic Authority</td>
+        <td><code style="font-size:0.75rem">pkg:pypi/cryptography@41.0.7</code></td>
+        <td>None</td>
+        <td style="background:#fef9c3;font-weight:600;">Medium</td>
+        <td><span style="background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:0.75rem">SOUP - Security Critical</span></td>
+      </tr>
+      <tr>
+        <td><strong>HealthApp-Core</strong></td>
+        <td>1.0.0</td>
+        <td>application</td>
+        <td>Proprietary</td>
+        <td>MedTech Company</td>
+        <td><code style="font-size:0.75rem">pkg:generic/healthapp-core@1.0.0</code></td>
+        <td>None</td>
+        <td style="background:#dcfce7;font-weight:600;">Low</td>
+        <td><span style="background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-size:0.75rem">First-Party</span></td>
+      </tr></tbody>
+  </table>
+
+  <h2>Export CycloneDX 1.5 (JSON)</h2>
+  <p style="font-size:0.85rem;color:#64748b;">
+    Format machine-readable requis par FDA Cybersecurity Guidance 2023 Section VI.C
+  </p>
+  <pre>{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "version": 1,
+  "serialNumber": "urn:uuid:sbom-healthapp-1.2.0",
+  "metadata": {
+    "timestamp": "2026-02-18T22:33:46.663416",
+    "component": {
+      "type": "application",
+      "name": "HealthApp",
+      "version": "1.2.0",
+      "supplier": {
+        "name": "MedTech SAS"
+      }
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "react",
+      "version": "18.2.0",
+      "purl": "pkg:npm/react@18.2.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Meta Platforms"
+      }
+    },
+    {
+      "type": "framework",
+      "name": "django",
+      "version": "4.2.9",
+      "purl": "pkg:pypi/django@4.2.9",
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Django Software Foundation"
+      }
+    },
+    {
+      "type": "database",
+      "name": "postgresql",
+      "version": "15.4",
+      "purl": "pkg:generic/postgresql@15.4",
+      "licenses": [
+        {
+          "license": {
+            "id": "PostgreSQL"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "PostgreSQL Global Development Group"
+      }
+    },
+    {
+      "type": "library",
+      "name": "cryptography",
+      "version": "41.0.7",
+      "purl": "pkg:pypi/cryptography@41.0.7",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "Python Cryptographic Authority"
+      }
+    },
+    {
+      "type": "application",
+      "name": "HealthApp-Core",
+      "version": "1.0.0",
+      "purl": "pkg:generic/healthapp-core@1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "Proprietary"
+          }
+        }
+      ],
+      "supplier": {
+        "name": "MedTech Company"
+      }
+    }
+  ]
+}</pre>
+</div>
+<div class="footer">
+  MedTech SAS — SBOM CycloneDX 1.5 — HealthApp v1.2.0 | 18/02/2026
+</div>
+</body>
+</html>

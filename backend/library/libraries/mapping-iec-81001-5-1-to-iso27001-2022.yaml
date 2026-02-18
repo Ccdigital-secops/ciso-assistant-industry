@@ -1,0 +1,95 @@
+urn: urn:intuitem:risk:library:mapping-iec-81001-5-1-to-iso27001-2022
+ref_id: mapping-iec-81001-5-1-to-iso27001-2022
+version: 1
+name: Mapping IEC 81001-5-1 to ISO 27001:2022
+description: "Mapping between IEC 81001-5-1 (Health Software Cybersecurity) and ISO 27001:2022 (Information Security Management). Enables reuse of ISO 27001 evidence for health software cybersecurity compliance."
+locale: en
+copyright: "intuitem"
+provider: intuitem
+packager: intuitem
+
+objects:
+  requirement_mapping_set:
+    urn: urn:intuitem:risk:requirement_mapping_set:mapping-iec-81001-5-1-to-iso27001-2022
+    name: Mapping IEC 81001-5-1 to ISO 27001:2022
+    description: "Cross-reference between IEC 81001-5-1 health software cybersecurity requirements and ISO 27001:2022 controls"
+    source_framework_urn: urn:intuitem:risk:framework:iec-81001-5-1
+    target_framework_urn: urn:intuitem:risk:framework:iso27001-2022
+    mappings:
+      # Security Management System
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:4.1
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:4
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:4.2
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:5.2
+        relationship: SUBSET_OF
+      # Security Risk Management
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.1
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:6.1.2
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.2
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:6.1.2
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.3
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:6.1.3
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.4
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:6.1.2
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.5
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:9.3
+        relationship: SUBSET_OF
+      # Authentication and Authorization
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.2
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:annex-a-5.15
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.2
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:annex-a-5.16
+        relationship: SUBSET_OF
+      # Cryptography
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.3
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:annex-a-8.24
+        relationship: SUBSET_OF
+      # Audit Logging
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.4
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:annex-a-8.15
+        relationship: SUBSET_OF
+      # Data Integrity
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.5
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:annex-a-8.11
+        relationship: SUBSET_OF
+      # Software Updates
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.6
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:annex-a-8.8
+        relationship: SUBSET_OF
+      # Secure Configuration
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.7
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:annex-a-8.9
+        relationship: SUBSET_OF
+      # Third-Party Components
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.8
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:annex-a-5.20
+        relationship: SUBSET_OF
+      # Secure Architecture
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:7.1
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:annex-a-8.25
+        relationship: SUBSET_OF
+      # Secure Coding
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:7.2
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:annex-a-8.28
+        relationship: SUBSET_OF
+      # Security Testing
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:7.3
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:annex-a-8.29
+        relationship: SUBSET_OF
+      # Vulnerability Monitoring
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.1
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:annex-a-8.8
+        relationship: SUBSET_OF
+      # Incident Response
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.2
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:annex-a-5.24
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.2
+        target_node_urn: urn:intuitem:risk:req_node:iso27001-2022:annex-a-5.26
+        relationship: SUBSET_OF

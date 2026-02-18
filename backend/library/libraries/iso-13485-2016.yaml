@@ -1,0 +1,623 @@
+urn: urn:intuitem:risk:library:iso-13485-2016
+ref_id: ISO-13485
+version: 1
+name: ISO 13485:2016 - Medical Devices Quality Management System
+description: "ISO 13485:2016 - Medical devices - Quality management systems - Requirements for regulatory purposes. International QMS standard for medical device manufacturers, aligned with MDR EU, FDA QMSR 2026 (21 CFR Part 820), IEC 62304 software lifecycle, and ISO 14971 risk management."
+locale: en
+copyright: "ISO - International Organization for Standardization"
+provider: ISO
+packager: intuitem
+
+translations:
+  fr:
+    name: ISO 13485:2016 - Système de Management de la Qualité pour Dispositifs Médicaux
+    description: "ISO 13485:2016 - Dispositifs médicaux - Systèmes de management de la qualité - Exigences à des fins réglementaires. Norme QMS internationale pour les fabricants de dispositifs médicaux, alignée avec MDR UE, FDA QMSR 2026 (21 CFR Partie 820), IEC 62304 cycle de vie logiciel et ISO 14971 gestion des risques."
+
+objects:
+  framework:
+    urn: urn:intuitem:risk:framework:iso-13485-2016
+    ref_id: ISO-13485
+    name: ISO 13485:2016 - Medical Devices Quality Management System
+    description: "ISO 13485:2016 specifies requirements for a quality management system where an organization needs to demonstrate its ability to provide medical devices and related services that consistently meet customer and applicable regulatory requirements. It is the basis for FDA QMSR 2026 and required for MDR EU compliance."
+    translations:
+      fr:
+        name: ISO 13485:2016 - Système de Management de la Qualité pour Dispositifs Médicaux
+        description: "ISO 13485:2016 spécifie les exigences relatives à un système de management de la qualité lorsqu'un organisme doit démontrer son aptitude à fournir régulièrement des dispositifs médicaux et des services associés conformes aux exigences des clients et aux exigences réglementaires applicables."
+
+    implementation_groups_definition:
+      - ref_id: MANUFACTURER
+        name: "Manufacturer"
+        description: "Full ISO 13485 requirements for medical device manufacturers"
+        translations:
+          fr:
+            name: "Fabricant"
+            description: "Exigences complètes ISO 13485 pour les fabricants de dispositifs médicaux"
+      - ref_id: SUPPLIER
+        name: "Supplier / Contract Manufacturer"
+        description: "ISO 13485 requirements applicable to suppliers and contract manufacturers"
+        translations:
+          fr:
+            name: "Fournisseur / Sous-traitant"
+            description: "Exigences ISO 13485 applicables aux fournisseurs et sous-traitants"
+      - ref_id: SAMD
+        name: "Software as Medical Device (SaMD)"
+        description: "ISO 13485 requirements specifically relevant to software-only medical devices"
+        translations:
+          fr:
+            name: "Logiciel en tant que Dispositif Médical (SaMD)"
+            description: "Exigences ISO 13485 spécifiquement pertinentes pour les dispositifs médicaux logiciels uniquement"
+
+    requirement_nodes:
+      # ==========================================
+      # CLAUSE 4: QUALITY MANAGEMENT SYSTEM
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:4
+        ref_id: "4"
+        name: "Quality Management System"
+        description: "General requirements for establishing and maintaining a QMS for medical devices"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Système de management de la qualité"
+            description: "Exigences générales pour établir et maintenir un SMQ pour les dispositifs médicaux"
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:4.1
+        ref_id: "4.1"
+        name: "General Requirements"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:4
+        description: "The organization shall establish, document, implement and maintain a quality management system and maintain its effectiveness in accordance with the requirements of this International Standard. The organization shall document the QMS scope, exclusions, and the interaction between processes."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Exigences générales"
+            description: "L'organisme doit établir, documenter, mettre en œuvre et maintenir un système de management de la qualité et en maintenir l'efficacité conformément aux exigences de la présente Norme internationale."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:4.2
+        ref_id: "4.2"
+        name: "Documentation Requirements"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:4
+        description: "The QMS documentation shall include: quality policy and objectives, quality manual, documented procedures, documents needed to ensure effective planning/operation/control of processes, records required by this standard, and any other documentation required by applicable regulatory requirements."
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "Exigences relatives à la documentation"
+            description: "La documentation du SMQ doit comprendre : la politique qualité et les objectifs, le manuel qualité, les procédures documentées, les documents nécessaires pour assurer la planification/l'exploitation/la maîtrise efficaces des processus."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:4.2.1
+        ref_id: "4.2.1"
+        name: "Quality Manual"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:4.2
+        description: "The organization shall establish and maintain a quality manual that includes: the scope of the QMS, documented procedures or references to them, a description of the interaction between QMS processes, and the documented procedures established for the QMS."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Manuel qualité"
+            description: "L'organisme doit établir et tenir à jour un manuel qualité qui comprend : le domaine d'application du SMQ, les procédures documentées ou les références à celles-ci, une description des interactions entre les processus du SMQ."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:4.2.2
+        ref_id: "4.2.2"
+        name: "Medical Device File"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:4.2
+        description: "The organization shall establish and maintain a medical device file (technical file / design history file) for each medical device type or family. The file shall contain or reference documents defining product specifications, manufacturing/inspection/testing requirements, and applicable regulatory requirements."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SAMD]
+        translations:
+          fr:
+            name: "Dossier de dispositif médical"
+            description: "L'organisme doit établir et tenir à jour un dossier de dispositif médical (dossier technique / dossier d'historique de conception) pour chaque type ou famille de dispositif médical."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:4.2.3
+        ref_id: "4.2.3"
+        name: "Control of Documents"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:4.2
+        description: "Documents required by the QMS shall be controlled. A documented procedure shall define controls for: approval, review and update, identification of changes, availability of applicable versions, legibility, identification of external documents, and prevention of unintended use of obsolete documents."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Maîtrise des documents"
+            description: "Les documents requis par le SMQ doivent être maîtrisés. Une procédure documentée doit définir les maîtrises pour : l'approbation, la revue et la mise à jour, l'identification des modifications, la disponibilité des versions applicables."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:4.2.4
+        ref_id: "4.2.4"
+        name: "Control of Records"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:4.2
+        description: "Records shall be established and maintained to provide evidence of conformity to requirements and of the effective operation of the QMS. Records shall remain legible, readily identifiable and retrievable. Retention times shall be defined, considering regulatory requirements (minimum lifetime of device + 2 years per MDR)."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Maîtrise des enregistrements"
+            description: "Des enregistrements doivent être établis et maintenus pour apporter la preuve de la conformité aux exigences et du fonctionnement efficace du SMQ. Les durées de conservation doivent être définies en tenant compte des exigences réglementaires."
+
+      # ==========================================
+      # CLAUSE 5: MANAGEMENT RESPONSIBILITY
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:5
+        ref_id: "5"
+        name: "Management Responsibility"
+        description: "Requirements for top management commitment and leadership in the QMS"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Responsabilité de la direction"
+            description: "Exigences relatives à l'engagement et au leadership de la direction dans le SMQ"
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:5.1
+        ref_id: "5.1"
+        name: "Management Commitment"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:5
+        description: "Top management shall provide evidence of its commitment to the development and implementation of the QMS and maintaining its effectiveness by: communicating the importance of meeting requirements, establishing quality policy and objectives, conducting management reviews, and ensuring availability of resources."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Engagement de la direction"
+            description: "La direction doit apporter la preuve de son engagement dans le développement et la mise en œuvre du SMQ ainsi que dans l'amélioration continue de son efficacité."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:5.2
+        ref_id: "5.2"
+        name: "Customer Focus"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:5
+        description: "Top management shall ensure that customer requirements and applicable regulatory requirements are determined and met."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Orientation client"
+            description: "La direction doit s'assurer que les exigences des clients et les exigences réglementaires applicables sont déterminées et satisfaites."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:5.3
+        ref_id: "5.3"
+        name: "Quality Policy"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:5
+        description: "Top management shall ensure that the quality policy is appropriate to the purpose of the organization, includes a commitment to comply with requirements and maintain the effectiveness of the QMS, provides a framework for establishing quality objectives, and is communicated and understood within the organization."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Politique qualité"
+            description: "La direction doit s'assurer que la politique qualité est adaptée à la finalité de l'organisme, comprend un engagement à satisfaire aux exigences et à maintenir l'efficacité du SMQ."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:5.4
+        ref_id: "5.4"
+        name: "Planning"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:5
+        description: "Top management shall ensure that quality objectives are established at relevant functions and levels within the organization, and that planning of the QMS is carried out to meet requirements and quality objectives."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Planification"
+            description: "La direction doit s'assurer que des objectifs qualité sont établis aux fonctions et aux niveaux appropriés au sein de l'organisme."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:5.5
+        ref_id: "5.5"
+        name: "Responsibility, Authority and Communication"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:5
+        description: "Top management shall ensure that responsibilities and authorities are defined, documented and communicated within the organization. A management representative shall be appointed with responsibility and authority for QMS implementation and reporting."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Responsabilité, autorité et communication"
+            description: "La direction doit s'assurer que les responsabilités et les autorités sont définies, documentées et communiquées au sein de l'organisme."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:5.6
+        ref_id: "5.6"
+        name: "Management Review"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:5
+        description: "Top management shall review the organization's QMS at planned intervals to ensure its continuing suitability, adequacy and effectiveness. The review shall include assessment of opportunities for improvement and the need for changes to the QMS, including quality policy and objectives."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Revue de direction"
+            description: "La direction doit, à intervalles planifiés, procéder à la revue du SMQ de l'organisme pour s'assurer qu'il demeure pertinent, adéquat et efficace."
+
+      # ==========================================
+      # CLAUSE 6: RESOURCE MANAGEMENT
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:6
+        ref_id: "6"
+        name: "Resource Management"
+        description: "Requirements for provision and management of resources"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Management des ressources"
+            description: "Exigences relatives à la mise à disposition et à la gestion des ressources"
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:6.1
+        ref_id: "6.1"
+        name: "Provision of Resources"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:6
+        description: "The organization shall determine and provide the resources needed to implement and maintain the QMS and maintain its effectiveness, and to meet applicable regulatory and customer requirements."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Mise à disposition des ressources"
+            description: "L'organisme doit déterminer et fournir les ressources nécessaires pour mettre en œuvre et maintenir le SMQ et en maintenir l'efficacité."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:6.2
+        ref_id: "6.2"
+        name: "Human Resources"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:6
+        description: "Personnel performing work affecting product quality shall be competent on the basis of appropriate education, training, skills and experience. The organization shall determine the necessary competence, provide training, evaluate effectiveness, and maintain records of education, training, skills and experience."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Ressources humaines"
+            description: "Le personnel effectuant un travail ayant une incidence sur la qualité du produit doit être compétent sur la base d'une formation initiale et professionnelle, d'un savoir-faire et d'une expérience appropriés."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:6.3
+        ref_id: "6.3"
+        name: "Infrastructure"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:6
+        description: "The organization shall document the requirements for infrastructure needed to achieve conformity to product requirements, prevent product mix-up, and ensure orderly handling of product. Infrastructure includes buildings, workspace, process equipment, and supporting services (IT systems, communication)."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Infrastructure"
+            description: "L'organisme doit documenter les exigences relatives à l'infrastructure nécessaire pour réaliser la conformité aux exigences du produit, prévenir les mélanges de produits et assurer une manutention ordonnée des produits."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:6.4
+        ref_id: "6.4"
+        name: "Work Environment and Contamination Control"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:6
+        description: "The organization shall document requirements for the work environment needed to achieve conformity to product requirements. For software, this includes the development environment, version control systems, and cybersecurity controls for the development infrastructure."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SAMD]
+        translations:
+          fr:
+            name: "Environnement de travail et maîtrise de la contamination"
+            description: "L'organisme doit documenter les exigences relatives à l'environnement de travail nécessaire pour réaliser la conformité aux exigences du produit."
+
+      # ==========================================
+      # CLAUSE 7: PRODUCT REALIZATION
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7
+        ref_id: "7"
+        name: "Product Realization"
+        description: "Requirements for planning and executing product development and production"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Réalisation du produit"
+            description: "Exigences relatives à la planification et à l'exécution du développement et de la production du produit"
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.1
+        ref_id: "7.1"
+        name: "Planning of Product Realization"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7
+        description: "The organization shall plan and develop the processes needed for product realization. Planning shall be consistent with the requirements of other QMS processes. The organization shall document risk management activities per ISO 14971 as part of product realization planning."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SAMD]
+        translations:
+          fr:
+            name: "Planification de la réalisation du produit"
+            description: "L'organisme doit planifier et développer les processus nécessaires à la réalisation du produit. La planification doit être cohérente avec les exigences des autres processus du SMQ."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.2
+        ref_id: "7.2"
+        name: "Customer-Related Processes"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7
+        description: "The organization shall determine requirements related to the product including: customer requirements, regulatory requirements, and any additional requirements determined by the organization. Requirements shall be reviewed before commitment to supply."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Processus relatifs aux clients"
+            description: "L'organisme doit déterminer les exigences relatives au produit, notamment les exigences des clients, les exigences réglementaires et toutes exigences supplémentaires déterminées par l'organisme."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3
+        ref_id: "7.3"
+        name: "Design and Development"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7
+        description: "The organization shall document procedures for design and development. Planning shall determine: stages, review/verification/validation activities, responsibilities. For software: IEC 62304 lifecycle processes shall be applied. Security requirements from IEC 81001-5-1 shall be included in design inputs."
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "Conception et développement"
+            description: "L'organisme doit documenter des procédures pour la conception et le développement. Pour les logiciels : les processus du cycle de vie IEC 62304 doivent être appliqués."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.1
+        ref_id: "7.3.1"
+        name: "Design and Development Planning"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3
+        description: "The organization shall document a plan for each design and development project. The plan shall describe the design and development stages, the review, verification and validation activities, and the responsibilities and authorities for design and development."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SAMD]
+        translations:
+          fr:
+            name: "Planification de la conception et du développement"
+            description: "L'organisme doit documenter un plan pour chaque projet de conception et de développement décrivant les étapes, les activités de revue, vérification et validation, et les responsabilités."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.2
+        ref_id: "7.3.2"
+        name: "Design and Development Inputs"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3
+        description: "Inputs relating to product requirements shall be determined and records maintained. Inputs shall include: functional/performance/safety requirements, applicable regulatory requirements, risk management outputs (ISO 14971), and cybersecurity requirements (IEC 81001-5-1 §6)."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SAMD]
+        translations:
+          fr:
+            name: "Éléments d'entrée de la conception et du développement"
+            description: "Les éléments d'entrée relatifs aux exigences du produit doivent être déterminés et des enregistrements maintenus, incluant les exigences fonctionnelles, réglementaires, de gestion des risques et de cybersécurité."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.3
+        ref_id: "7.3.3"
+        name: "Design and Development Outputs"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3
+        description: "Outputs of design and development shall be documented and shall: meet input requirements, provide information for purchasing/production/service provision, contain or reference acceptance criteria, and specify characteristics essential for safe and proper use. For software: source code, SBOM, security architecture."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SAMD]
+        translations:
+          fr:
+            name: "Éléments de sortie de la conception et du développement"
+            description: "Les éléments de sortie de la conception et du développement doivent être documentés et satisfaire aux exigences d'entrée. Pour les logiciels : code source, SBOM, architecture de sécurité."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.4
+        ref_id: "7.3.4"
+        name: "Design and Development Review"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3
+        description: "At suitable stages, systematic reviews of design and development shall be performed to evaluate the ability of the results to meet requirements, identify any problems and propose necessary actions. Records shall include results of reviews and any necessary actions."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SAMD]
+        translations:
+          fr:
+            name: "Revue de la conception et du développement"
+            description: "À des étapes appropriées, des revues systématiques de la conception et du développement doivent être réalisées pour évaluer l'aptitude des résultats à satisfaire aux exigences."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.5
+        ref_id: "7.3.5"
+        name: "Design and Development Verification"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3
+        description: "Verification shall be performed to ensure that design and development outputs meet input requirements. Records shall include results of verification and any necessary actions. For software: unit testing, integration testing, static analysis (SAST) per IEC 62304 §5.5-5.6."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SAMD]
+        translations:
+          fr:
+            name: "Vérification de la conception et du développement"
+            description: "Une vérification doit être réalisée pour s'assurer que les éléments de sortie de la conception et du développement satisfont aux exigences d'entrée. Pour les logiciels : tests unitaires, tests d'intégration, analyse statique."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.6
+        ref_id: "7.3.6"
+        name: "Design and Development Validation"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3
+        description: "Validation shall be performed to ensure that the resulting product is capable of meeting the requirements for the specified application or intended use. Records shall include results of validation and any necessary actions. For software: system testing, user acceptance testing, security testing (DAST, penetration testing)."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SAMD]
+        translations:
+          fr:
+            name: "Validation de la conception et du développement"
+            description: "Une validation doit être réalisée pour s'assurer que le produit résultant est apte à satisfaire aux exigences pour l'application spécifiée ou l'utilisation prévue."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.7
+        ref_id: "7.3.7"
+        name: "Design and Development Transfer"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3
+        description: "The organization shall document procedures for transfer of design and development outputs to manufacturing. Transfer activities shall ensure that design outputs are verified as suitable for manufacturing before becoming final production specifications."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SAMD]
+        translations:
+          fr:
+            name: "Transfert de la conception et du développement"
+            description: "L'organisme doit documenter des procédures pour le transfert des éléments de sortie de la conception et du développement vers la fabrication."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.8
+        ref_id: "7.3.8"
+        name: "Design and Development Changes"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3
+        description: "Design and development changes shall be identified and records maintained. Changes shall be reviewed, verified and validated as appropriate, and approved before implementation. The review shall include evaluation of the effect of the changes on constituent parts and delivered product."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SAMD]
+        translations:
+          fr:
+            name: "Maîtrise des modifications de conception et de développement"
+            description: "Les modifications de la conception et du développement doivent être identifiées et des enregistrements maintenus. Les modifications doivent être revues, vérifiées et validées selon le cas."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3.9
+        ref_id: "7.3.9"
+        name: "Design and Development Files"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7.3
+        description: "The organization shall maintain a design and development file (Design History File / Technical File) for each medical device type or family. The file shall contain or reference records generated to demonstrate conformity to design and development requirements and records of design and development changes."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SAMD]
+        translations:
+          fr:
+            name: "Dossiers de conception et de développement"
+            description: "L'organisme doit tenir à jour un dossier de conception et de développement (Design History File / Dossier Technique) pour chaque type ou famille de dispositif médical."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.4
+        ref_id: "7.4"
+        name: "Purchasing"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7
+        description: "The organization shall document procedures to ensure that purchased product conforms to specified requirements. Suppliers shall be evaluated and selected based on their ability to supply product in accordance with requirements. For software: SOUP/third-party component management per IEC 62304 AMD1 and SBOM requirements."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Achats"
+            description: "L'organisme doit documenter des procédures pour s'assurer que le produit acheté est conforme aux exigences spécifiées. Pour les logiciels : gestion des composants SOUP/tiers et exigences SBOM."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.5
+        ref_id: "7.5"
+        name: "Production and Service Provision"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7
+        description: "The organization shall plan and carry out production and service provision under controlled conditions. For software: controlled conditions include version control, build management, release procedures, and cybersecurity controls for the production environment."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SAMD]
+        translations:
+          fr:
+            name: "Production et prestation de service"
+            description: "L'organisme doit planifier et réaliser la production et la prestation de service dans des conditions maîtrisées. Pour les logiciels : contrôle de version, gestion des builds, procédures de mise en production."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:7.6
+        ref_id: "7.6"
+        name: "Control of Monitoring and Measuring Equipment"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:7
+        description: "The organization shall determine the monitoring and measurement to be undertaken and the monitoring and measuring equipment needed to provide evidence of conformity of product to determined requirements. For software: testing tools, security scanning tools, and test environments shall be validated."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SAMD]
+        translations:
+          fr:
+            name: "Maîtrise des équipements de surveillance et de mesure"
+            description: "L'organisme doit déterminer la surveillance et la mesure à effectuer ainsi que les équipements nécessaires. Pour les logiciels : les outils de test et d'analyse de sécurité doivent être validés."
+
+      # ==========================================
+      # CLAUSE 8: MEASUREMENT, ANALYSIS AND IMPROVEMENT
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:8
+        ref_id: "8"
+        name: "Measurement, Analysis and Improvement"
+        description: "Requirements for monitoring, measurement, analysis and improvement of the QMS"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Mesures, analyse et amélioration"
+            description: "Exigences relatives à la surveillance, la mesure, l'analyse et l'amélioration du SMQ"
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:8.1
+        ref_id: "8.1"
+        name: "General"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:8
+        description: "The organization shall plan and implement the monitoring, measurement, analysis and improvement processes needed to demonstrate conformity of the product, ensure conformity of the QMS, and maintain the effectiveness of the QMS."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Généralités"
+            description: "L'organisme doit planifier et mettre en œuvre les processus de surveillance, de mesure, d'analyse et d'amélioration nécessaires pour démontrer la conformité du produit et assurer la conformité du SMQ."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:8.2
+        ref_id: "8.2"
+        name: "Monitoring and Measurement"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:8
+        description: "The organization shall monitor information relating to customer perception as to whether the organization has met customer requirements. Methods for obtaining and using this information shall be documented. Post-market surveillance data including cybersecurity incidents shall be collected and analyzed."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Surveillance et mesure"
+            description: "L'organisme doit surveiller les informations relatives à la perception des clients quant à la satisfaction de leurs exigences. Les données de surveillance post-commercialisation incluant les incidents de cybersécurité doivent être collectées et analysées."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:8.3
+        ref_id: "8.3"
+        name: "Control of Nonconforming Product"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:8
+        description: "The organization shall document procedures to ensure that product which does not conform to product requirements is identified and controlled to prevent its unintended use or delivery. For software: security vulnerabilities identified during testing or post-market shall be treated as nonconformities."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Maîtrise du produit non conforme"
+            description: "L'organisme doit documenter des procédures pour s'assurer que le produit non conforme aux exigences est identifié et maîtrisé. Pour les logiciels : les vulnérabilités de sécurité identifiées doivent être traitées comme des non-conformités."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:8.4
+        ref_id: "8.4"
+        name: "Analysis of Data"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:8
+        description: "The organization shall document procedures to determine, collect and analyze appropriate data to demonstrate the suitability and effectiveness of the QMS and to evaluate where continual improvement can be made. Data shall include: customer feedback, product conformity, process characteristics, supplier performance, and post-market surveillance data."
+        assessable: true
+        depth: 2
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Analyse des données"
+            description: "L'organisme doit documenter des procédures pour déterminer, recueillir et analyser les données appropriées pour démontrer la pertinence et l'efficacité du SMQ."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:8.5
+        ref_id: "8.5"
+        name: "Improvement"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:8
+        description: "The organization shall identify and implement changes needed to ensure and maintain the continued suitability, adequacy and effectiveness of the QMS. The organization shall document procedures for corrective action (CAPA) and preventive action. CAPAs shall include cybersecurity incidents and vulnerability remediations."
+        assessable: false
+        depth: 2
+        translations:
+          fr:
+            name: "Amélioration"
+            description: "L'organisme doit identifier et mettre en œuvre les modifications nécessaires pour assurer et maintenir la pertinence, l'adéquation et l'efficacité continues du SMQ."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:8.5.1
+        ref_id: "8.5.1"
+        name: "General - Continual Improvement"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:8.5
+        description: "The organization shall identify and implement any changes necessary to ensure and maintain the continued suitability, adequacy and effectiveness of the QMS through the use of quality policy, quality objectives, audit results, post-market surveillance data, analysis of data, corrective and preventive actions, and management review."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Généralités - Amélioration continue"
+            description: "L'organisme doit identifier et mettre en œuvre les modifications nécessaires pour assurer et maintenir la pertinence, l'adéquation et l'efficacité continues du SMQ."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:8.5.2
+        ref_id: "8.5.2"
+        name: "Corrective Action (CAPA)"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:8.5
+        description: "The organization shall take action to eliminate the causes of nonconformities in order to prevent recurrence. A documented procedure shall define requirements for: reviewing nonconformities (including customer complaints), determining causes, evaluating need for action, implementing action, recording results, and reviewing effectiveness. CAPAs for cybersecurity vulnerabilities shall include risk assessment per ISO 14971."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Action corrective (CAPA)"
+            description: "L'organisme doit mener des actions pour éliminer les causes des non-conformités afin d'éviter qu'elles ne se reproduisent. Les CAPA pour les vulnérabilités de cybersécurité doivent inclure une évaluation des risques selon ISO 14971."
+
+      - urn: urn:intuitem:risk:req_node:iso-13485-2016:8.5.3
+        ref_id: "8.5.3"
+        name: "Preventive Action"
+        parent_urn: urn:intuitem:risk:req_node:iso-13485-2016:8.5
+        description: "The organization shall determine action to eliminate the causes of potential nonconformities in order to prevent their occurrence. Preventive actions shall be appropriate to the effects of the potential problems. For cybersecurity: threat intelligence monitoring and proactive vulnerability management are preventive actions."
+        assessable: true
+        depth: 3
+        implementation_groups: [MANUFACTURER, SUPPLIER, SAMD]
+        translations:
+          fr:
+            name: "Action préventive"
+            description: "L'organisme doit déterminer les actions permettant d'éliminer les causes des non-conformités potentielles afin d'éviter qu'elles ne se produisent. Pour la cybersécurité : la surveillance du renseignement sur les menaces et la gestion proactive des vulnérabilités sont des actions préventives."
