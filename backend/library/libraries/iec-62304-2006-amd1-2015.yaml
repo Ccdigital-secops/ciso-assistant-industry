@@ -1,0 +1,472 @@
+urn: urn:intuitem:risk:library:iec-62304-2006-amd1-2015
+ref_id: IEC-62304
+version: 1
+name: IEC 62304:2006+AMD1:2015 - Medical Device Software Lifecycle
+description: "IEC 62304:2006 amended by AMD1:2015 - Medical device software - Software life cycle processes. Defines the lifecycle requirements for medical device software, aligned with MDR EU Annex I GSPR 17, FDA QMSR 2026, ISO 14971 risk management, and IEC 81001-5-1 cybersecurity."
+locale: en
+copyright: "IEC - International Electrotechnical Commission"
+provider: IEC
+packager: intuitem
+
+translations:
+  fr:
+    name: IEC 62304:2006+AMD1:2015 - Cycle de vie des logiciels de dispositifs médicaux
+    description: "IEC 62304:2006 amendée par AMD1:2015 - Logiciels de dispositifs médicaux - Processus du cycle de vie des logiciels. Définit les exigences du cycle de vie pour les logiciels de dispositifs médicaux, alignée avec MDR UE Annexe I GSPR 17, FDA QMSR 2026, gestion des risques ISO 14971 et cybersécurité IEC 81001-5-1."
+
+objects:
+  framework:
+    urn: urn:intuitem:risk:framework:iec-62304-2006-amd1-2015
+    ref_id: IEC-62304
+    name: IEC 62304:2006+AMD1:2015 - Medical Device Software Lifecycle
+    description: "IEC 62304 specifies lifecycle requirements for medical device software. It applies to software that is itself a medical device (SaMD) and software that is part of a medical device. AMD1:2015 added requirements for legacy software and clarified the relationship with cybersecurity."
+    translations:
+      fr:
+        name: IEC 62304:2006+AMD1:2015 - Cycle de vie des logiciels de dispositifs médicaux
+        description: "IEC 62304 spécifie les exigences du cycle de vie pour les logiciels de dispositifs médicaux. Elle s'applique aux logiciels qui sont eux-mêmes des dispositifs médicaux (SaMD) et aux logiciels qui font partie d'un dispositif médical. AMD1:2015 a ajouté des exigences pour les logiciels existants et clarifié la relation avec la cybersécurité."
+
+    implementation_groups_definition:
+      - ref_id: CLASS-A
+        name: "Software Safety Class A"
+        description: "No injury or damage to health is possible - minimal lifecycle requirements"
+        translations:
+          fr:
+            name: "Classe de sécurité logicielle A"
+            description: "Aucune blessure ou atteinte à la santé n'est possible - exigences minimales du cycle de vie"
+      - ref_id: CLASS-B
+        name: "Software Safety Class B"
+        description: "Non-serious injury is possible - standard lifecycle requirements"
+        translations:
+          fr:
+            name: "Classe de sécurité logicielle B"
+            description: "Une blessure non grave est possible - exigences standard du cycle de vie"
+      - ref_id: CLASS-C
+        name: "Software Safety Class C"
+        description: "Death or serious injury is possible - comprehensive lifecycle requirements"
+        translations:
+          fr:
+            name: "Classe de sécurité logicielle C"
+            description: "Un décès ou une blessure grave est possible - exigences complètes du cycle de vie"
+
+    requirement_nodes:
+      # ==========================================
+      # CLAUSE 4: GENERAL REQUIREMENTS
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-62304:4
+        ref_id: "4"
+        name: "General Requirements"
+        description: "General requirements for medical device software lifecycle processes"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Exigences générales"
+            description: "Exigences générales pour les processus du cycle de vie des logiciels de dispositifs médicaux"
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:4.1
+        ref_id: "4.1"
+        name: "Quality Management System"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:4
+        description: "The manufacturer shall establish a quality management system that includes the software lifecycle processes. The QMS shall comply with applicable regulations (MDR EU, FDA QMSR 2026 / 21 CFR Part 820)."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Système de management de la qualité"
+            description: "Le fabricant doit établir un système de management de la qualité qui inclut les processus du cycle de vie des logiciels. Le QMS doit être conforme aux réglementations applicables (MDR UE, FDA QMSR 2026 / 21 CFR Partie 820)."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:4.2
+        ref_id: "4.2"
+        name: "Risk Management"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:4
+        description: "The manufacturer shall establish a risk management process for software in accordance with ISO 14971. Software safety classification shall be determined based on risk analysis."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Gestion des risques"
+            description: "Le fabricant doit établir un processus de gestion des risques pour les logiciels conformément à ISO 14971. La classification de sécurité des logiciels doit être déterminée sur la base de l'analyse des risques."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:4.3
+        ref_id: "4.3"
+        name: "Software Safety Classification"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:4
+        description: "The manufacturer shall assign a software safety class (A, B, or C) to each software system based on the possible effects on the patient, operator, or other persons from a failure of the software system. Cybersecurity failures shall be considered in the classification."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Classification de sécurité des logiciels"
+            description: "Le fabricant doit attribuer une classe de sécurité logicielle (A, B ou C) à chaque système logiciel en fonction des effets possibles sur le patient, l'opérateur ou d'autres personnes en cas de défaillance du système logiciel. Les défaillances de cybersécurité doivent être prises en compte dans la classification."
+
+      # ==========================================
+      # CLAUSE 5: SOFTWARE DEVELOPMENT PROCESS
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-62304:5
+        ref_id: "5"
+        name: "Software Development Process"
+        description: "Requirements for the software development lifecycle"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Processus de développement des logiciels"
+            description: "Exigences pour le cycle de vie du développement des logiciels"
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:5.1
+        ref_id: "5.1"
+        name: "Software Development Planning"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:5
+        description: "The manufacturer shall establish a software development plan. The plan shall include: lifecycle model, activities and tasks, deliverables, traceability, configuration management, problem resolution, and security activities per IEC 81001-5-1."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Planification du développement des logiciels"
+            description: "Le fabricant doit établir un plan de développement des logiciels. Le plan doit inclure : le modèle de cycle de vie, les activités et tâches, les livrables, la traçabilité, la gestion de configuration, la résolution des problèmes et les activités de sécurité selon IEC 81001-5-1."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:5.2
+        ref_id: "5.2"
+        name: "Software Requirements Analysis"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:5
+        description: "The manufacturer shall define and document software requirements including: functional requirements, performance requirements, interface requirements, security requirements (from IEC 81001-5-1 and ISO 14971), and regulatory requirements (MDR, FDA)."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Analyse des exigences logicielles"
+            description: "Le fabricant doit définir et documenter les exigences logicielles, notamment : les exigences fonctionnelles, les exigences de performance, les exigences d'interface, les exigences de sécurité (d'IEC 81001-5-1 et ISO 14971) et les exigences réglementaires (MDR, FDA)."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:5.3
+        ref_id: "5.3"
+        name: "Software Architectural Design"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:5
+        description: "The manufacturer shall document the software architecture. The architecture shall identify software items and their interfaces, and shall support security requirements. Security architecture shall be documented per IEC 81001-5-1 Section 7.1."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Conception architecturale des logiciels"
+            description: "Le fabricant doit documenter l'architecture logicielle. L'architecture doit identifier les éléments logiciels et leurs interfaces, et doit prendre en charge les exigences de sécurité. L'architecture de sécurité doit être documentée selon IEC 81001-5-1 Section 7.1."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:5.4
+        ref_id: "5.4"
+        name: "Software Detailed Design"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:5
+        description: "The manufacturer shall document the detailed design of each software unit. The detailed design shall include security design details for software units implementing security controls."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-C]
+        translations:
+          fr:
+            name: "Conception détaillée des logiciels"
+            description: "Le fabricant doit documenter la conception détaillée de chaque unité logicielle. La conception détaillée doit inclure les détails de conception de sécurité pour les unités logicielles mettant en œuvre des contrôles de sécurité."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:5.5
+        ref_id: "5.5"
+        name: "Software Unit Implementation and Verification"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:5
+        description: "The manufacturer shall implement each software unit and verify it meets its detailed design. Secure coding standards shall be applied per IEC 81001-5-1 Section 7.2. Unit tests shall include security test cases."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Mise en œuvre et vérification des unités logicielles"
+            description: "Le fabricant doit mettre en œuvre chaque unité logicielle et vérifier qu'elle satisfait sa conception détaillée. Les normes de codage sécurisé doivent être appliquées selon IEC 81001-5-1 Section 7.2. Les tests unitaires doivent inclure des cas de test de sécurité."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:5.6
+        ref_id: "5.6"
+        name: "Software Integration and Integration Testing"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:5
+        description: "The manufacturer shall integrate software items and perform integration testing. Integration tests shall verify security interfaces and interactions between components."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Intégration et tests d'intégration des logiciels"
+            description: "Le fabricant doit intégrer les éléments logiciels et réaliser des tests d'intégration. Les tests d'intégration doivent vérifier les interfaces de sécurité et les interactions entre les composants."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:5.7
+        ref_id: "5.7"
+        name: "Software System Testing"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:5
+        description: "The manufacturer shall perform software system testing to verify that the software meets its requirements. System testing shall include security testing per IEC 81001-5-1 Section 7.3, including SAST, DAST, and penetration testing."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Tests du système logiciel"
+            description: "Le fabricant doit réaliser des tests du système logiciel pour vérifier que le logiciel satisfait ses exigences. Les tests système doivent inclure des tests de sécurité selon IEC 81001-5-1 Section 7.3, notamment SAST, DAST et tests de pénétration."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:5.8
+        ref_id: "5.8"
+        name: "Software Release"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:5
+        description: "The manufacturer shall document a procedure for releasing software. Release shall require completion of all required activities, resolution of known anomalies, and confirmation that security requirements are met."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Mise en production du logiciel"
+            description: "Le fabricant doit documenter une procédure de mise en production des logiciels. La mise en production doit nécessiter l'achèvement de toutes les activités requises, la résolution des anomalies connues et la confirmation que les exigences de sécurité sont satisfaites."
+
+      # ==========================================
+      # CLAUSE 6: SOFTWARE MAINTENANCE PROCESS
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-62304:6
+        ref_id: "6"
+        name: "Software Maintenance Process"
+        description: "Requirements for maintaining medical device software after release"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Processus de maintenance des logiciels"
+            description: "Exigences pour la maintenance des logiciels de dispositifs médicaux après la mise en production"
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:6.1
+        ref_id: "6.1"
+        name: "Software Maintenance Plan"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:6
+        description: "The manufacturer shall establish a software maintenance plan. The plan shall include procedures for handling security patches and updates per IEC 81001-5-1 Section 6.6."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Plan de maintenance des logiciels"
+            description: "Le fabricant doit établir un plan de maintenance des logiciels. Le plan doit inclure des procédures pour la gestion des correctifs et mises à jour de sécurité selon IEC 81001-5-1 Section 6.6."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:6.2
+        ref_id: "6.2"
+        name: "Problem and Modification Analysis"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:6
+        description: "The manufacturer shall analyze reported problems and modifications to determine their impact on safety and security. Security vulnerabilities shall be analyzed for patient safety impact."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Analyse des problèmes et modifications"
+            description: "Le fabricant doit analyser les problèmes signalés et les modifications pour déterminer leur impact sur la sécurité. Les vulnérabilités de cybersécurité doivent être analysées pour leur impact sur la sécurité des patients."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:6.3
+        ref_id: "6.3"
+        name: "Modification Implementation"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:6
+        description: "The manufacturer shall implement modifications using the software development process. Security patches shall be implemented and tested with appropriate urgency based on risk assessment."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Mise en œuvre des modifications"
+            description: "Le fabricant doit mettre en œuvre les modifications en utilisant le processus de développement des logiciels. Les correctifs de sécurité doivent être mis en œuvre et testés avec l'urgence appropriée basée sur l'évaluation des risques."
+
+      # ==========================================
+      # CLAUSE 7: SOFTWARE RISK MANAGEMENT PROCESS
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-62304:7
+        ref_id: "7"
+        name: "Software Risk Management Process"
+        description: "Risk management activities specific to software throughout the lifecycle"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Processus de gestion des risques logiciels"
+            description: "Activités de gestion des risques spécifiques aux logiciels tout au long du cycle de vie"
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:7.1
+        ref_id: "7.1"
+        name: "Analysis of Software Contributing to Hazardous Situations"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:7
+        description: "The manufacturer shall identify software items that could contribute to hazardous situations. Cybersecurity failures that could lead to patient harm shall be identified and linked to ISO 14971 risk analysis."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Analyse des logiciels contribuant aux situations dangereuses"
+            description: "Le fabricant doit identifier les éléments logiciels pouvant contribuer à des situations dangereuses. Les défaillances de cybersécurité pouvant entraîner des dommages aux patients doivent être identifiées et liées à l'analyse des risques ISO 14971."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:7.2
+        ref_id: "7.2"
+        name: "Risk Control Measures"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:7
+        description: "The manufacturer shall implement software risk control measures. Security controls implemented in software shall be verified for effectiveness. The relationship between software risk controls and ISO 14971 risk controls shall be documented."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Mesures de maîtrise des risques"
+            description: "Le fabricant doit mettre en œuvre des mesures de maîtrise des risques logiciels. Les contrôles de sécurité mis en œuvre dans les logiciels doivent être vérifiés pour leur efficacité. La relation entre les contrôles de risques logiciels et les contrôles de risques ISO 14971 doit être documentée."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:7.3
+        ref_id: "7.3"
+        name: "Verification of Risk Control Measures"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:7
+        description: "The manufacturer shall verify that risk control measures are implemented correctly and are effective. Security testing shall verify that cybersecurity controls effectively reduce identified risks."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Vérification des mesures de maîtrise des risques"
+            description: "Le fabricant doit vérifier que les mesures de maîtrise des risques sont correctement mises en œuvre et sont efficaces. Les tests de sécurité doivent vérifier que les contrôles de cybersécurité réduisent efficacement les risques identifiés."
+
+      # ==========================================
+      # CLAUSE 8: SOFTWARE CONFIGURATION MANAGEMENT PROCESS
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-62304:8
+        ref_id: "8"
+        name: "Software Configuration Management Process"
+        description: "Requirements for configuration management of medical device software"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Processus de gestion de configuration des logiciels"
+            description: "Exigences pour la gestion de configuration des logiciels de dispositifs médicaux"
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:8.1
+        ref_id: "8.1"
+        name: "Configuration Management Plan"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:8
+        description: "The manufacturer shall establish a configuration management plan. The plan shall include management of the Software Bill of Materials (SBOM) required by FDA Cybersecurity Guidance 2023."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Plan de gestion de configuration"
+            description: "Le fabricant doit établir un plan de gestion de configuration. Le plan doit inclure la gestion de la nomenclature logicielle (SBOM) requise par FDA Cybersecurity Guidance 2023."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:8.2
+        ref_id: "8.2"
+        name: "Software Configuration Items Identification"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:8
+        description: "The manufacturer shall identify software configuration items including all software components, third-party libraries, and open-source components. This forms the basis for the SBOM."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Identification des éléments de configuration logicielle"
+            description: "Le fabricant doit identifier les éléments de configuration logicielle, notamment tous les composants logiciels, bibliothèques tierces et composants open source. Cela constitue la base du SBOM."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:8.3
+        ref_id: "8.3"
+        name: "Change Control"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:8
+        description: "The manufacturer shall control changes to software configuration items. Security-related changes shall be assessed for their impact on the security risk profile and shall require appropriate testing."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Contrôle des modifications"
+            description: "Le fabricant doit contrôler les modifications apportées aux éléments de configuration logicielle. Les modifications liées à la sécurité doivent être évaluées pour leur impact sur le profil de risque de sécurité et nécessitent des tests appropriés."
+
+      # ==========================================
+      # CLAUSE 9: SOFTWARE PROBLEM RESOLUTION PROCESS
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-62304:9
+        ref_id: "9"
+        name: "Software Problem Resolution Process"
+        description: "Requirements for resolving software problems including security vulnerabilities"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Processus de résolution des problèmes logiciels"
+            description: "Exigences pour la résolution des problèmes logiciels, y compris les vulnérabilités de sécurité"
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:9.1
+        ref_id: "9.1"
+        name: "Problem Reporting"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:9
+        description: "The manufacturer shall establish a process for reporting software problems. Security vulnerabilities reported through coordinated disclosure shall be handled through this process."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Signalement des problèmes"
+            description: "Le fabricant doit établir un processus de signalement des problèmes logiciels. Les vulnérabilités de sécurité signalées par divulgation coordonnée doivent être traitées par ce processus."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:9.2
+        ref_id: "9.2"
+        name: "Problem Evaluation and Resolution"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:9
+        description: "The manufacturer shall evaluate and resolve software problems. Security vulnerabilities shall be evaluated for patient safety impact (per ISO 14971) and cybersecurity risk (per IEC 81001-5-1). Resolution timelines shall be commensurate with risk."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Évaluation et résolution des problèmes"
+            description: "Le fabricant doit évaluer et résoudre les problèmes logiciels. Les vulnérabilités de sécurité doivent être évaluées pour leur impact sur la sécurité des patients (selon ISO 14971) et le risque de cybersécurité (selon IEC 81001-5-1). Les délais de résolution doivent être proportionnels au risque."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:9.3
+        ref_id: "9.3"
+        name: "Advisory Notices"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:9
+        description: "The manufacturer shall issue advisory notices when required. Security advisories shall be issued for cybersecurity vulnerabilities that could affect patient safety, in accordance with MDR post-market surveillance requirements and FDA reporting requirements."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Avis de sécurité"
+            description: "Le fabricant doit émettre des avis de sécurité lorsque requis. Des avis de sécurité doivent être émis pour les vulnérabilités de cybersécurité pouvant affecter la sécurité des patients, conformément aux exigences MDR de surveillance post-commercialisation et aux exigences de signalement FDA."
+
+      # ==========================================
+      # ANNEX: LEGACY SOFTWARE (AMD1:2015)
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iec-62304:amd1
+        ref_id: "AMD1"
+        name: "Legacy Software Requirements (AMD1:2015)"
+        description: "Requirements for legacy medical device software added by Amendment 1:2015"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Exigences pour les logiciels existants (AMD1:2015)"
+            description: "Exigences pour les logiciels de dispositifs médicaux existants ajoutées par l'Amendement 1:2015"
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:amd1.legacy
+        ref_id: "AMD1.LEGACY"
+        name: "Legacy Software Identification and Assessment"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:amd1
+        description: "The manufacturer shall identify legacy software and assess its compliance with IEC 62304. For legacy software, a gap analysis shall be performed and a plan to achieve compliance shall be documented. Security assessment of legacy software shall include vulnerability analysis."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Identification et évaluation des logiciels existants"
+            description: "Le fabricant doit identifier les logiciels existants et évaluer leur conformité à IEC 62304. Pour les logiciels existants, une analyse des écarts doit être réalisée et un plan pour atteindre la conformité doit être documenté. L'évaluation de sécurité des logiciels existants doit inclure une analyse de vulnérabilités."
+
+      - urn: urn:intuitem:risk:req_node:iec-62304:amd1.soup
+        ref_id: "AMD1.SOUP"
+        name: "Software of Unknown Provenance (SOUP)"
+        parent_urn: urn:intuitem:risk:req_node:iec-62304:amd1
+        description: "The manufacturer shall identify and manage Software of Unknown Provenance (SOUP) including open-source and third-party components. SOUP security vulnerabilities shall be monitored and addressed. This requirement aligns with FDA SBOM requirements."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-A, CLASS-B, CLASS-C]
+        translations:
+          fr:
+            name: "Logiciels d'origine inconnue (SOUP)"
+            description: "Le fabricant doit identifier et gérer les logiciels d'origine inconnue (SOUP), notamment les composants open source et tiers. Les vulnérabilités de sécurité des SOUP doivent être surveillées et traitées. Cette exigence est alignée avec les exigences SBOM de la FDA."

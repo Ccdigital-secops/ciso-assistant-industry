@@ -1,0 +1,73 @@
+urn: urn:intuitem:risk:library:mapping-iec-81001-5-1-to-iso-14971-2019
+ref_id: mapping-iec-81001-5-1-to-iso-14971-2019
+version: 1
+name: Mapping IEC 81001-5-1 to ISO 14971:2019
+description: "Mapping between IEC 81001-5-1 (Health Software Cybersecurity) and ISO 14971:2019 (Medical Device Risk Management). Demonstrates integration of cybersecurity risk management with medical device safety risk management."
+locale: en
+copyright: "intuitem"
+provider: intuitem
+packager: intuitem
+
+objects:
+  requirement_mapping_set:
+    urn: urn:intuitem:risk:requirement_mapping_set:mapping-iec-81001-5-1-to-iso-14971-2019
+    name: Mapping IEC 81001-5-1 to ISO 14971:2019
+    description: "Cross-reference between IEC 81001-5-1 cybersecurity requirements and ISO 14971:2019 risk management requirements for medical devices"
+    source_framework_urn: urn:intuitem:risk:framework:iec-81001-5-1
+    target_framework_urn: urn:intuitem:risk:framework:iso-14971-2019
+    mappings:
+      # Security Management System → Risk Management System
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:4.1
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:4.1
+        relationship: SUBSET_OF
+      # Security Risk Management Process → Risk Management Plan
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.1
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:4.4
+        relationship: SUBSET_OF
+      # Security Risk Assessment → Risk Analysis
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.2
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:5.2
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.2
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:5.3
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.2
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:5.4
+        relationship: SUBSET_OF
+      # Security Risk Control → Risk Control
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.3
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:7.1
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.3
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:7.2
+        relationship: SUBSET_OF
+      # Residual Risk → Residual Risk Evaluation
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.4
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:7.3
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.4
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:8.1
+        relationship: SUBSET_OF
+      # Security Risk Review → Risk Management Review
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:5.5
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:4.2
+        relationship: SUBSET_OF
+      # Security Requirements → Hazard Identification
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:6.1
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:5.3
+        relationship: SUBSET_OF
+      # Vulnerability Monitoring → Post-Production Information
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.1
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:9.1
+        relationship: SUBSET_OF
+      # Incident Response → Post-Production Actions
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.2
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:9.2
+        relationship: SUBSET_OF
+      # Post-Market Surveillance → Post-Production
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.3
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:9.1
+        relationship: SUBSET_OF
+      - source_node_urn: urn:intuitem:risk:req_node:iec-81001-5-1:8.3
+        target_node_urn: urn:intuitem:risk:req_node:iso-14971-2019:9.3
+        relationship: SUBSET_OF

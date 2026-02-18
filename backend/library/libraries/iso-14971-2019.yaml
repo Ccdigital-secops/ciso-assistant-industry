@@ -1,0 +1,426 @@
+urn: urn:intuitem:risk:library:iso-14971-2019
+ref_id: ISO-14971
+version: 1
+name: ISO 14971:2019 - Medical Devices Risk Management
+description: "ISO 14971:2019 - Medical devices - Application of risk management to medical devices. International standard for risk management in medical devices, aligned with MDR EU Annex I GSPR, FDA QMSR 2026, and IEC 81001-5-1 for cybersecurity risk integration."
+locale: en
+copyright: "ISO - International Organization for Standardization"
+provider: ISO
+packager: intuitem
+
+translations:
+  fr:
+    name: ISO 14971:2019 - Gestion des risques pour les dispositifs médicaux
+    description: "ISO 14971:2019 - Dispositifs médicaux - Application de la gestion des risques aux dispositifs médicaux. Norme internationale pour la gestion des risques dans les dispositifs médicaux, alignée avec MDR UE Annexe I GSPR, FDA QMSR 2026 et IEC 81001-5-1 pour l'intégration des risques de cybersécurité."
+
+objects:
+  framework:
+    urn: urn:intuitem:risk:framework:iso-14971-2019
+    ref_id: ISO-14971
+    name: ISO 14971:2019 - Medical Devices Risk Management
+    description: "ISO 14971:2019 specifies terminology, principles and a process for risk management of medical devices, including software as a medical device (SaMD). It provides a framework for manufacturers to identify hazards, estimate and evaluate risks, control risks, and monitor effectiveness of controls throughout the product lifecycle."
+    translations:
+      fr:
+        name: ISO 14971:2019 - Gestion des risques pour les dispositifs médicaux
+        description: "ISO 14971:2019 spécifie la terminologie, les principes et un processus de gestion des risques pour les dispositifs médicaux, y compris les logiciels en tant que dispositif médical (SaMD). Elle fournit un cadre aux fabricants pour identifier les dangers, estimer et évaluer les risques, maîtriser les risques et surveiller l'efficacité des mesures tout au long du cycle de vie du produit."
+
+    implementation_groups_definition:
+      - ref_id: CLASS-I
+        name: "Class I - Low Risk"
+        description: "Low risk medical devices - basic risk management requirements"
+        translations:
+          fr:
+            name: "Classe I - Risque faible"
+            description: "Dispositifs médicaux à faible risque - exigences de base en gestion des risques"
+      - ref_id: CLASS-IIA
+        name: "Class IIa - Medium Risk"
+        description: "Medium risk medical devices - standard risk management requirements"
+        translations:
+          fr:
+            name: "Classe IIa - Risque moyen"
+            description: "Dispositifs médicaux à risque moyen - exigences standard de gestion des risques"
+      - ref_id: CLASS-IIB
+        name: "Class IIb - High Risk"
+        description: "High risk medical devices - enhanced risk management requirements"
+        translations:
+          fr:
+            name: "Classe IIb - Risque élevé"
+            description: "Dispositifs médicaux à risque élevé - exigences renforcées de gestion des risques"
+      - ref_id: CLASS-III
+        name: "Class III - Highest Risk"
+        description: "Highest risk medical devices - comprehensive risk management requirements"
+        translations:
+          fr:
+            name: "Classe III - Risque le plus élevé"
+            description: "Dispositifs médicaux à risque le plus élevé - exigences complètes de gestion des risques"
+
+    requirement_nodes:
+      # ==========================================
+      # CLAUSE 4: GENERAL REQUIREMENTS FOR RISK MANAGEMENT SYSTEM
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:4
+        ref_id: "4"
+        name: "General Requirements for Risk Management System"
+        description: "General requirements for establishing and maintaining a risk management system for medical devices"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Exigences générales pour le système de gestion des risques"
+            description: "Exigences générales pour établir et maintenir un système de gestion des risques pour les dispositifs médicaux"
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:4.1
+        ref_id: "4.1"
+        name: "Risk Management System"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:4
+        description: "The manufacturer shall establish, document, implement and maintain an ongoing process for identifying hazards associated with a medical device, estimating and evaluating the associated risks, controlling these risks, and monitoring the effectiveness of the controls."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Système de gestion des risques"
+            description: "Le fabricant doit établir, documenter, mettre en œuvre et maintenir un processus continu d'identification des dangers associés à un dispositif médical, d'estimation et d'évaluation des risques associés, de maîtrise de ces risques et de surveillance de l'efficacité des mesures."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:4.2
+        ref_id: "4.2"
+        name: "Management Responsibilities"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:4
+        description: "Management with executive responsibility shall ensure that appropriate resources are available to carry out risk management activities and shall review the suitability of the risk management process at planned intervals."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Responsabilités de la direction"
+            description: "La direction ayant la responsabilité exécutive doit s'assurer que les ressources appropriées sont disponibles pour mener les activités de gestion des risques et doit revoir l'adéquation du processus de gestion des risques à intervalles planifiés."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:4.3
+        ref_id: "4.3"
+        name: "Competence of Personnel"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:4
+        description: "Personnel performing risk management activities shall be competent. Records of competence shall be maintained."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Compétence du personnel"
+            description: "Le personnel effectuant des activités de gestion des risques doit être compétent. Les enregistrements de compétence doivent être maintenus."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:4.4
+        ref_id: "4.4"
+        name: "Risk Management Plan"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:4
+        description: "A risk management plan shall be documented for each medical device or group of medical devices. The plan shall include: scope, responsibilities, risk acceptability criteria, verification activities, and post-production activities."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Plan de gestion des risques"
+            description: "Un plan de gestion des risques doit être documenté pour chaque dispositif médical ou groupe de dispositifs médicaux. Le plan doit inclure : le périmètre, les responsabilités, les critères d'acceptabilité des risques, les activités de vérification et les activités post-production."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:4.5
+        ref_id: "4.5"
+        name: "Risk Management File"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:4
+        description: "A risk management file shall be maintained for each medical device. The file shall contain or reference all records and other documents generated by the risk management process."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Dossier de gestion des risques"
+            description: "Un dossier de gestion des risques doit être maintenu pour chaque dispositif médical. Le dossier doit contenir ou référencer tous les enregistrements et autres documents générés par le processus de gestion des risques."
+
+      # ==========================================
+      # CLAUSE 5: RISK ANALYSIS
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:5
+        ref_id: "5"
+        name: "Risk Analysis"
+        description: "Systematic process for identifying hazards and estimating risks"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Analyse des risques"
+            description: "Processus systématique d'identification des dangers et d'estimation des risques"
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:5.1
+        ref_id: "5.1"
+        name: "Risk Analysis Process"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:5
+        description: "The manufacturer shall document a process for risk analysis. The risk analysis shall be performed for each medical device."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Processus d'analyse des risques"
+            description: "Le fabricant doit documenter un processus d'analyse des risques. L'analyse des risques doit être réalisée pour chaque dispositif médical."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:5.2
+        ref_id: "5.2"
+        name: "Intended Use and Reasonably Foreseeable Misuse"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:5
+        description: "The manufacturer shall document the intended use and intended users of the medical device, including reasonably foreseeable misuse. For software, this includes cybersecurity threats as foreseeable misuse scenarios."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Utilisation prévue et mauvaise utilisation raisonnablement prévisible"
+            description: "Le fabricant doit documenter l'utilisation prévue et les utilisateurs prévus du dispositif médical, y compris la mauvaise utilisation raisonnablement prévisible. Pour les logiciels, cela inclut les menaces de cybersécurité comme scénarios de mauvaise utilisation prévisibles."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:5.3
+        ref_id: "5.3"
+        name: "Hazard Identification"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:5
+        description: "The manufacturer shall identify known and foreseeable hazards associated with the medical device in both normal and fault conditions. For health software, cybersecurity hazards (unauthorized access, data corruption, availability loss) shall be identified."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Identification des dangers"
+            description: "Le fabricant doit identifier les dangers connus et prévisibles associés au dispositif médical dans des conditions normales et de défaillance. Pour les logiciels de santé, les dangers de cybersécurité (accès non autorisé, corruption des données, perte de disponibilité) doivent être identifiés."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:5.4
+        ref_id: "5.4"
+        name: "Risk Estimation"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:5
+        description: "For each identified hazardous situation, the manufacturer shall estimate the risk using available information or data. Risk estimation shall consider probability of occurrence of harm and severity of harm."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Estimation des risques"
+            description: "Pour chaque situation dangereuse identifiée, le fabricant doit estimer le risque en utilisant les informations ou données disponibles. L'estimation des risques doit prendre en compte la probabilité d'occurrence du dommage et la gravité du dommage."
+
+      # ==========================================
+      # CLAUSE 6: RISK EVALUATION
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:6
+        ref_id: "6"
+        name: "Risk Evaluation"
+        description: "Evaluation of estimated risks against defined risk acceptability criteria"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Évaluation des risques"
+            description: "Évaluation des risques estimés par rapport aux critères d'acceptabilité des risques définis"
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:6.1
+        ref_id: "6.1"
+        name: "Risk Acceptability Criteria"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:6
+        description: "The manufacturer shall define risk acceptability criteria based on applicable national or regional regulations, relevant international standards, and the state of the art. Criteria shall consider both safety risks and cybersecurity risks."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Critères d'acceptabilité des risques"
+            description: "Le fabricant doit définir des critères d'acceptabilité des risques basés sur les réglementations nationales ou régionales applicables, les normes internationales pertinentes et l'état de l'art. Les critères doivent prendre en compte à la fois les risques de sécurité et les risques de cybersécurité."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:6.2
+        ref_id: "6.2"
+        name: "Risk Evaluation Decision"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:6
+        description: "For each identified risk, the manufacturer shall decide whether risk reduction is required. If the risk is not acceptable, risk control measures shall be implemented."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Décision d'évaluation des risques"
+            description: "Pour chaque risque identifié, le fabricant doit décider si une réduction du risque est nécessaire. Si le risque n'est pas acceptable, des mesures de maîtrise du risque doivent être mises en œuvre."
+
+      # ==========================================
+      # CLAUSE 7: RISK CONTROL
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:7
+        ref_id: "7"
+        name: "Risk Control"
+        description: "Implementation and verification of risk control measures"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Maîtrise des risques"
+            description: "Mise en œuvre et vérification des mesures de maîtrise des risques"
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:7.1
+        ref_id: "7.1"
+        name: "Risk Control Option Analysis"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:7
+        description: "The manufacturer shall identify risk control measures using the following priority: inherent safety by design, protective measures in the device or manufacturing process, information for safety. For cybersecurity: security-by-design first, then technical controls, then user guidance."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Analyse des options de maîtrise des risques"
+            description: "Le fabricant doit identifier les mesures de maîtrise des risques en utilisant la priorité suivante : sécurité intrinsèque par conception, mesures de protection dans le dispositif ou le processus de fabrication, informations pour la sécurité. Pour la cybersécurité : sécurité dès la conception en premier, puis contrôles techniques, puis guide utilisateur."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:7.2
+        ref_id: "7.2"
+        name: "Risk Control Implementation"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:7
+        description: "The manufacturer shall implement the selected risk control measures and verify their implementation."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Mise en œuvre des mesures de maîtrise des risques"
+            description: "Le fabricant doit mettre en œuvre les mesures de maîtrise des risques sélectionnées et vérifier leur mise en œuvre."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:7.3
+        ref_id: "7.3"
+        name: "Residual Risk Evaluation"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:7
+        description: "After implementing risk control measures, the manufacturer shall evaluate the residual risk. If the residual risk is not acceptable, additional risk control measures shall be implemented."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Évaluation des risques résiduels"
+            description: "Après la mise en œuvre des mesures de maîtrise des risques, le fabricant doit évaluer le risque résiduel. Si le risque résiduel n'est pas acceptable, des mesures de maîtrise des risques supplémentaires doivent être mises en œuvre."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:7.4
+        ref_id: "7.4"
+        name: "Risk/Benefit Analysis"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:7
+        description: "If the residual risk is not acceptable and further risk control is not practicable, the manufacturer shall gather and review data and literature to determine if the medical benefits of the intended use outweigh the residual risk."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Analyse risque/bénéfice"
+            description: "Si le risque résiduel n'est pas acceptable et qu'une maîtrise supplémentaire des risques n'est pas praticable, le fabricant doit recueillir et examiner des données et de la littérature pour déterminer si les bénéfices médicaux de l'utilisation prévue l'emportent sur le risque résiduel."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:7.5
+        ref_id: "7.5"
+        name: "Risks Arising from Risk Control Measures"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:7
+        description: "The manufacturer shall review risk control measures to identify whether new hazards or hazardous situations are introduced. New risks introduced by cybersecurity controls (e.g., authentication failures blocking emergency access) shall be assessed."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Risques découlant des mesures de maîtrise des risques"
+            description: "Le fabricant doit revoir les mesures de maîtrise des risques pour identifier si de nouveaux dangers ou situations dangereuses sont introduits. Les nouveaux risques introduits par les contrôles de cybersécurité (ex. échecs d'authentification bloquant l'accès d'urgence) doivent être évalués."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:7.6
+        ref_id: "7.6"
+        name: "Completeness of Risk Control"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:7
+        description: "The manufacturer shall verify that all identified hazards have been addressed and that the overall residual risk is acceptable."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Exhaustivité de la maîtrise des risques"
+            description: "Le fabricant doit vérifier que tous les dangers identifiés ont été traités et que le risque résiduel global est acceptable."
+
+      # ==========================================
+      # CLAUSE 8: OVERALL RESIDUAL RISK EVALUATION
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:8
+        ref_id: "8"
+        name: "Overall Residual Risk Evaluation and Review"
+        description: "Evaluation of the overall residual risk considering all risk control measures"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Évaluation et revue du risque résiduel global"
+            description: "Évaluation du risque résiduel global en tenant compte de toutes les mesures de maîtrise des risques"
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:8.1
+        ref_id: "8.1"
+        name: "Overall Residual Risk Acceptability"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:8
+        description: "After all risk control measures have been implemented, the manufacturer shall evaluate the overall residual risk using the criteria established in the risk management plan. The evaluation shall consider both safety and cybersecurity residual risks."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Acceptabilité du risque résiduel global"
+            description: "Après la mise en œuvre de toutes les mesures de maîtrise des risques, le fabricant doit évaluer le risque résiduel global en utilisant les critères établis dans le plan de gestion des risques. L'évaluation doit prendre en compte les risques résiduels de sécurité et de cybersécurité."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:8.2
+        ref_id: "8.2"
+        name: "Risk Management Report"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:8
+        description: "The manufacturer shall document a risk management report summarizing the risk management process and its results. The report shall confirm that the risk management plan has been implemented and that the overall residual risk is acceptable."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Rapport de gestion des risques"
+            description: "Le fabricant doit documenter un rapport de gestion des risques résumant le processus de gestion des risques et ses résultats. Le rapport doit confirmer que le plan de gestion des risques a été mis en œuvre et que le risque résiduel global est acceptable."
+
+      # ==========================================
+      # CLAUSE 9: PRODUCTION AND POST-PRODUCTION ACTIVITIES
+      # ==========================================
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:9
+        ref_id: "9"
+        name: "Production and Post-Production Activities"
+        description: "Risk management activities during production and post-production phases"
+        assessable: false
+        depth: 1
+        translations:
+          fr:
+            name: "Activités de production et post-production"
+            description: "Activités de gestion des risques pendant les phases de production et post-production"
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:9.1
+        ref_id: "9.1"
+        name: "Post-Production Information Collection"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:9
+        description: "The manufacturer shall establish a system to collect and review information about the medical device in the post-production phase. This includes cybersecurity vulnerability reports, security incidents, and threat intelligence."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Collecte d'informations post-production"
+            description: "Le fabricant doit établir un système pour collecter et examiner les informations sur le dispositif médical en phase post-production. Cela inclut les rapports de vulnérabilités de cybersécurité, les incidents de sécurité et le renseignement sur les menaces."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:9.2
+        ref_id: "9.2"
+        name: "Post-Production Risk Management Actions"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:9
+        description: "If post-production information indicates that the risk is no longer acceptable, the manufacturer shall take appropriate actions including: risk control measures, field safety corrective actions, and notification to regulatory authorities."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Actions de gestion des risques post-production"
+            description: "Si les informations post-production indiquent que le risque n'est plus acceptable, le fabricant doit prendre les mesures appropriées, notamment : mesures de maîtrise des risques, actions correctives de sécurité sur le terrain et notification aux autorités réglementaires."
+
+      - urn: urn:intuitem:risk:req_node:iso-14971-2019:9.3
+        ref_id: "9.3"
+        name: "Cybersecurity Risk in Post-Production"
+        parent_urn: urn:intuitem:risk:req_node:iso-14971-2019:9
+        description: "The manufacturer shall monitor cybersecurity threats and vulnerabilities in the post-production phase. New cybersecurity risks identified post-production shall be assessed using the risk management process and addressed through security patches or updates. Aligned with IEC 81001-5-1 Section 8 and MDR post-market surveillance requirements."
+        assessable: true
+        depth: 2
+        implementation_groups: [CLASS-I, CLASS-IIA, CLASS-IIB, CLASS-III]
+        translations:
+          fr:
+            name: "Risque de cybersécurité en post-production"
+            description: "Le fabricant doit surveiller les menaces et vulnérabilités de cybersécurité en phase post-production. Les nouveaux risques de cybersécurité identifiés en post-production doivent être évalués à l'aide du processus de gestion des risques et traités par des correctifs ou mises à jour de sécurité. Aligné avec IEC 81001-5-1 Section 8 et les exigences MDR de surveillance post-commercialisation."

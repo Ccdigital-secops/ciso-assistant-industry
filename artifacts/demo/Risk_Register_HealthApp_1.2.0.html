@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Risk Register - HealthApp v1.2.0</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f8fafc; color: #1e293b; }
+  .cover { background: linear-gradient(135deg, #7c2d12 0%, #9a3412 60%, #c2410c 100%);
+            color: white; padding: 60px; }
+  .cover h1 { font-size: 2.2rem; margin: 0 0 8px; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 40px 30px; }
+  h2 { color: #9a3412; border-left: 4px solid #c2410c; padding-left: 12px; margin-top: 40px; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 24px 0; }
+  .stat { background: white; border-radius: 8px; padding: 20px; text-align: center;
+           box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+  .stat .num { font-size: 2rem; font-weight: 700; }
+  .stat .lbl { font-size: 0.8rem; color: #64748b; margin-top: 4px; }
+  .high { color: #dc2626; }
+  .medium { color: #d97706; }
+  .low { color: #16a34a; }
+  table { width: 100%; border-collapse: collapse; background: white; border-radius: 8px;
+           overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); font-size: 0.82rem; }
+  th { background: #7c2d12; color: white; padding: 10px 8px; text-align: left; }
+  td { padding: 10px 8px; border-bottom: 1px solid #f1f5f9; vertical-align: top; }
+  tr:hover td { background: #fff7ed; }
+  .footer { background: #1e293b; color: #94a3b8; text-align: center; padding: 20px;
+             font-size: 0.8rem; margin-top: 60px; }
+</style>
+</head>
+<body>
+<div class="cover">
+  <h1>⚠️ Registre des Risques</h1>
+  <div>HealthApp v1.2.0 — MedTech SAS</div>
+  <div style="margin-top:12px;opacity:0.8;font-size:0.85rem;">
+    ISO 14971:2019 | IEC 81001-5-1 | MDR UE | FDA QMSR 2026 | Généré le 18/02/2026
+  </div>
+</div>
+<div class="container">
+  <h2>Résumé des Risques</h2>
+  <div class="stats">
+    <div class="stat"><div class="num">5</div><div class="lbl">Risques totaux</div></div>
+    <div class="stat"><div class="num high">3</div><div class="lbl">Risques élevés</div></div>
+    <div class="stat"><div class="num medium">2</div><div class="lbl">Risques moyens</div></div>
+    <div class="stat"><div class="num low">0</div><div class="lbl">Risques faibles</div></div>
+  </div>
+
+  <h2>Registre Détaillé (ISO 14971:2019)</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th><th>Danger</th><th>Situation dangereuse</th><th>Dommage</th>
+        <th>Probabilité</th><th>Gravité</th><th>Niveau initial</th>
+        <th>Mesure de maîtrise</th><th>Risque résiduel</th><th>Statut</th><th>Réf. ISO 14971</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>R-001</strong></td>
+        <td>Unauthorized access to patient data</td>
+        <td>Attacker gains access to PHI via unpatched vulnerability</td>
+        <td>Privacy breach, patient harm from data misuse</td>
+        <td>Possible</td>
+        <td>Critical</td>
+        <td style="background:#fee2e2;font-weight:600;">High</td>
+        <td>Authentication + encryption + patch management<br><small style="color:#64748b">IEC 81001-5-1 §6.2, §6.3, §6.6</small></td>
+        <td style="background:#dcfce7;font-weight:600;">Low</td>
+        <td><span style="color:#16a34a">✓ Mitigated</span></td>
+        <td><small>§5.3, §7.1</small></td>
+      </tr>
+      <tr>
+        <td><strong>R-002</strong></td>
+        <td>Software failure causing incorrect clinical data display</td>
+        <td>Bug causes wrong patient data to be shown</td>
+        <td>Incorrect clinical decision, patient injury</td>
+        <td>Unlikely</td>
+        <td>Critical</td>
+        <td style="background:#fef9c3;font-weight:600;">Medium</td>
+        <td>Input validation, unit tests, integration tests<br><small style="color:#64748b">IEC 62304 §5.5, §5.6, §7.2</small></td>
+        <td style="background:#dcfce7;font-weight:600;">Low</td>
+        <td><span style="color:#16a34a">✓ Mitigated</span></td>
+        <td><small>§5.3, §7.2</small></td>
+      </tr>
+      <tr>
+        <td><strong>R-003</strong></td>
+        <td>System unavailability during critical care</td>
+        <td>DoS attack or infrastructure failure blocks access</td>
+        <td>Delayed treatment, patient harm</td>
+        <td>Rare</td>
+        <td>Major</td>
+        <td style="background:#fef9c3;font-weight:600;">Medium</td>
+        <td>High availability architecture, DoS protection, BCP<br><small style="color:#64748b">IEC 81001-5-1 §6.7, IEC 62443 FR7</small></td>
+        <td style="background:#dcfce7;font-weight:600;">Low</td>
+        <td><span style="color:#16a34a">✓ Mitigated</span></td>
+        <td><small>§5.4, §7.3</small></td>
+      </tr>
+      <tr>
+        <td><strong>R-004</strong></td>
+        <td>Malicious code injection (SQL/XSS)</td>
+        <td>Attacker injects code via input fields</td>
+        <td>Data corruption, unauthorized actions</td>
+        <td>Possible</td>
+        <td>Major</td>
+        <td style="background:#fee2e2;font-weight:600;">High</td>
+        <td>Input sanitization, OWASP ASVS controls, SAST/DAST<br><small style="color:#64748b">IEC 81001-5-1 §7.2, §7.3; OWASP ASVS</small></td>
+        <td style="background:#dcfce7;font-weight:600;">Low</td>
+        <td><span style="color:#16a34a">✓ Mitigated</span></td>
+        <td><small>§5.3, §7.1</small></td>
+      </tr>
+      <tr>
+        <td><strong>R-005</strong></td>
+        <td>Insecure third-party component (SOUP vulnerability)</td>
+        <td>Known CVE in dependency exploited</td>
+        <td>System compromise, data breach</td>
+        <td>Possible</td>
+        <td>Major</td>
+        <td style="background:#fee2e2;font-weight:600;">High</td>
+        <td>SBOM management, dependency scanning, patch process<br><small style="color:#64748b">IEC 62304 AMD1 SOUP; FDA SBOM; IEC 81001-5-1 §6.8</small></td>
+        <td style="background:#dcfce7;font-weight:600;">Low</td>
+        <td><span style="color:#16a34a">✓ Mitigated</span></td>
+        <td><small>§5.3, §9.3</small></td>
+      </tr></tbody>
+  </table>
+
+  <h2>Critères d'Acceptabilité (ISO 14971 §6.1)</h2>
+  <table>
+    <thead><tr><th>Niveau de risque</th><th>Critère</th><th>Action requise</th></tr></thead>
+    <tbody>
+      <tr><td style="background:#fee2e2;font-weight:600;">Élevé</td>
+          <td>Probabilité ≥ Possible ET Gravité ≥ Majeure</td>
+          <td>Mesures de maîtrise obligatoires — risque résiduel doit être ≤ Moyen</td></tr>
+      <tr><td style="background:#fef9c3;font-weight:600;">Moyen</td>
+          <td>Probabilité Possible ET Gravité Modérée, OU Probabilité Rare ET Gravité Critique</td>
+          <td>Mesures de maîtrise recommandées — analyse risque/bénéfice si non réduit</td></tr>
+      <tr><td style="background:#dcfce7;font-weight:600;">Faible</td>
+          <td>Probabilité Rare ET Gravité ≤ Modérée</td>
+          <td>Acceptable — surveillance continue</td></tr>
+    </tbody>
+  </table>
+</div>
+<div class="footer">
+  MedTech SAS — Risk Register ISO 14971:2019 — HealthApp v1.2.0 | 18/02/2026
+</div>
+</body>
+</html>
