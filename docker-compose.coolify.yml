@@ -46,7 +46,6 @@ services:
     volumes:
       - backend-db:/code/db
       - backend-media:/app/media
-      - ./backend/library:/code/library
     depends_on:
       postgres:
         condition: service_healthy
@@ -79,7 +78,6 @@ services:
     volumes:
       - backend-db:/code/db
       - backend-media:/app/media
-      - ./backend/library:/code/library
     depends_on:
       backend:
         condition: service_healthy
