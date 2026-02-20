@@ -116,8 +116,8 @@ DJANGO_DEBUG=False
 POSTGRES_NAME=ciso_assistant_prod
 POSTGRES_USER=ciso_assistant
 POSTGRES_PASSWORD=[MOT_DE_PASSE_BDD_ETAPE_2]
-POSTGRES_HOST=ciso-assistant-db
-POSTGRES_PORT=5432
+DB_HOST=ciso-assistant-db
+DB_PORT=5432
 
 # Superutilisateur initial
 DJANGO_SUPERUSER_EMAIL=admin@rssi.ccdigital.fr
