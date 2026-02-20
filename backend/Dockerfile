@@ -23,6 +23,7 @@ RUN apt-get update && apt-get install -y \
   zlib1g-dev \
   libmagic1 \
   bubblewrap \
+  curl \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && locale-gen en_US.UTF-8 \
