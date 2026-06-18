@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(git -C /c/Users/joh_l/ciso-assistant-industry remote add:*)",
-      "Bash(git -C /c/Users/joh_l/ciso-assistant-industry remote -v)"
+      "Bash(git -C /c/Users/joh_l/ciso-assistant-industry remote -v)",
+      "Bash(git -C /c/Users/joh_l/ciso-assistant-industry ls-tree:*)"
     ]
   }
 }
