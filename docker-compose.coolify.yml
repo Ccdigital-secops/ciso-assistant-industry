@@ -61,7 +61,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     restart: unless-stopped
-    entrypoint: ["/bin/sh", "-c", "poetry run python manage.py run_huey -w 2 --scheduler-interval 60"]
+    entrypoint: ["/bin/sh", "-c", "python manage.py run_huey -w 2 --scheduler-interval 60"]
     environment:
       - DJANGO_SETTINGS_MODULE=ciso_assistant.settings
       - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
